@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/icon.png" type="text/css">
+    <title>Gioi thieu</title>
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Header css -->
+    <style>
+        @media (max-width: 576px) {
+
+            #logo {
+                width: 50px;
+                height: 55px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 400px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 10%;
+                padding-top: 35%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+        @media (min-width: 576px) {
+            #logo {
+                width: 70px;
+                height: 65px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 450px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 20%;
+                padding-top: 30%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            #logo {
+                width: 90px;
+                height: 85px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 20%;
+                padding-top: 25%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 65px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 550px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 23%;
+                padding-top: 22%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 80px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 600px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 23%;
+                padding-top: 22%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 80px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+        }
+    </style>
+
+    <!-- Nội dung -->
+    <style>
+        .duongngang {
+            position: absolute;
+            width: 90px;
+            height: 1px;
+            border-bottom: 2px solid grey;
+            margin-left: -45px;
+            margin-top: 10px;
+        }
+
+        /* Colorize-zoom Container */
+        .img-hover-zoom--colorize img {
+            transition: transform .5s, filter 1.5s ease-in-out;
+
+        }
+
+        /* The Transformation */
+        .img-hover-zoom--colorize:hover img {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+
+        .khung {
+            height: 200px;
+            width: 350px;
+            overflow: hidden;
+        }
+
+        .khung:hover .tenthuonghieu {
+            opacity: 0.8;
+            color: gold;
+        }
+
+        .tenthuonghieu {
+            background-color: rgba(196, 192, 192, 0.603);
+            height: 60px;
+            width: 350px;
+            bottom: 0;
+            padding-top: 5px;
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            font-weight: 500;
+            letter-spacing: 4px;
+        }
+    </style>
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
+
+        <a class="navbar-brand" style="color: white;" href="../../index.html">
+            <img src="../img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt="" loading="lazy">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="../../index.html">HOME</a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="#Introduce">INTRODUCE</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="#Technology">TECHNOLOGY</a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="#VM">V&M</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="#Brand">BRANDs</a>
+                </li>
+
+                <li class="nav-item dropdown mx-4">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REFER
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./LIVING.html">DESIGN LIVINGROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./CLASSROOM.html">DESIGN CLASSROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./WORK.html">DESIGN WORKROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./KITCHEN.html">DESIGN KITCHEN</a>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../pages/Lien_he.html"><i class="fa fa-map" aria-hidden="true"
+                            style="font-size: 21px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a href="../pages/login.html"><i class="fa fa-user"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Head -->
+    <h1 data-aos="zoom-in" data-aos-duration="1500" class="h1">
+        INTRODUCE PAGE</h1>
+
+    <div class="img-fluid">
+        <img src="../img/Background/Header.jpg"alt="">
+    </div>
+
+
+    <!-- Nội dung giới thiệu -->
+    <div class="container my-4">
+
+
+
+        <div class="row" data-aos="zoom-in" data-aos-duration="1000" id="Introduce">
+            <div class="col-md-12 text-center" style="position: relative;">
+                <h2 style="font-weight: 700;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    INTRODUCE</h2>
+                <span class="duongngang"></span>
+            </div>
+        </div>
+        <!-- Giới thiệu -->
+        <div class="row mt-5">
+
+            <div class="col-md-8 mt-3" data-aos="zoom-in-right">
+                <h4>RICHFIELD CHAIR</h4><br>
+                <i>The RichFieldChair website is designed to introduce products to customers about the best-selling
+                    chairs, new chairs, which can be placed in many different positions and spaces to help customers
+                    have the most comfortable seat. The website has many different types of chairs like an armchair,
+                    leather chairs, swivel chairs, recliner chairs, small-space chairs… At the same time, the website
+                    also brings attractive and clear images to help customers easily view, refer to, compare the price
+                    and quality of each type of chair on the market.</i>
+                <br><br>
+                <h5>RICHFIELD VIETNAM</h5>
+                <i>All Richfield in VN products are certified with European standards (the most standard assessment
+                    system
+                    for global furniture, Europe, America and Japan).</i>
+                <br><br>
+                <i>RichField Chair: is a suitable choice for apartment, apartment, rental and first-home owners.
+                    Modern design and high flexibility of each item, multi-function packed in one product, all at the
+                    most reasonable price.</i>
+                <br><br>
+                <h5>ACHIEVEMENTS</h5>
+                <i>More than five hundred thousand domestic products were sold. RICHFIELD VN's loyal customers are
+                    nearly 2 thousand people<br><br>
+                    Products of famous brands such as IKEA, SB, BO, ... are favored by customers for their quality and
+                    reasonable prices.
+                </i>
+
+            </div>
+
+            <div class="col-md-4 mt-3" data-aos="fade-up" data-aos-duration="1000">
+                <img src="../img/Introduce/gioithieu1.jpg" height="550" alt="">
+            </div>
+        </div>
+
+
+
+        <div class="row mt-5" data-aos="zoom-in" data-aos-duration="1000" id="Technology">
+            <div class="col-md-12 text-center" style="position: relative;">
+                <h2 style="font-weight: 700;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    TECHNOLOGY</h2>
+                <span class="duongngang"></span>
+            </div>
+        </div>
+        <!-- Công nghệ -->
+        <div class="row mt-5" data-aos="flip-left" data-aos-duration="1000">
+
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="../img/Introduce/CN-1.png" alt="">
+                </div>
+
+                <div class="col-md-10 mt-2">
+                    <i>
+                        E1: European standard E1 wood, which is strictly regulated for Formaldehyde concentration below
+                        0.005%, does not cause allergy and irritation to the respiratory system. Safe for both
+                        children.</i>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 my-3">
+                    <img src="../img/Introduce/CN-2.png" alt="">
+                </div>
+
+                <div class="col-md-10 mt-3">
+                    <i>
+                        Cleaf Surface technology for real wood grain up to 90% Cleaf Surface Technology for real wood
+                        grain up to 90% Cleaf Surface Technology for real wood grain up to 90%</i>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-2 my-3">
+                    <img src="../img/Introduce/CN-3.png" alt="">
+                </div>
+
+                <div class="col-md-10">
+                    <i>
+                        Door hinges from Germany: incorporates perfect sliding shock absorbers with durability tested to
+                        more
+                        than 60,000 times, modern wheel system mounted in the sliding door for silent gliding movement,
+                        one of the breakthroughs that are difficult to find in machined cabinets in Vietnam. The clothes
+                        hanging rod is reinforced and divided evenly into the sides of the cabinet extremely firmly,
+                        helping to bear the load up to 100 kg of uniform load, while the ordinary wardrobe can only
+                        withstand 40-50 kg of uniform load.</i>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-2 mt-3">
+                    <img src="../img/Introduce/CN-4.png" alt="">
+                </div>
+
+                <div class="col-md-10 mt-4">
+                    <i>
+                        Crystal High-Gloss: Advanced gloss coating technology, creating a shiny surface, effectively
+                        supporting scratches.Crystal High-Gloss: Advanced gloss coating technology, creating shiny
+                        surface, effective anti-scratch.</i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="row mt-4" data-aos="zoom-in" data-aos-duration="1000" id="VM">
+            <div class="col-md-12 text-center" style="position: relative;">
+                <h2 style="font-weight: 700;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    VISION & MISSON</h2>
+                <span class="duongngang"></span>
+            </div>
+        </div>
+        <!-- Tầm nhìn và sứ mạng -->
+        <div class="row my-5">
+
+            <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <img height="40px" src="../img/Introduce/tamnhin.png" alt="">
+                    </div>
+                    <div class="col-md-10">
+                        <i>
+                            <h4>VISION</h4>
+                            RICHFIELD strives to become a business based on the sustainable development of a
+                            Vietnamese family. We have become the destination to provide interior products with
+                            beautiful designs and convenient functions. We want to pioneer and become a representative
+                            representative to help you and your family Innovate your lifestyle.
+                        </i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6" data-aos="fade-zoom-in" data-aos-duration="1500">
+                <div class="row text-right">
+                    <div class="col-md-10">
+                        <i>
+                            <h4>MISSON</h4>
+                            Not only is the place to live, but "OWNER" is the origin of love and warmth, a place to
+                            you "recharge" ready to welcome the new day with the clearest spirit. Mission of
+                            SB is helping each customer to build a living and comfortable home by being focused
+                            analyze your needs and that of your family carefully.
+                        </i>
+                    </div>
+                    <div class="col-md-2">
+                        <img height="55px" src="../img/Introduce/sumenh.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="row mt-4" data-aos="zoom-in" data-aos-duration="1000" id="Brand">
+            <div class="col-md-12 text-center" style="position: relative;">
+                <h2 style="font-weight: 700;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+
+                    BRAND LINKS</h2>
+                <span class="duongngang"></span>
+            </div>
+        </div>
+        <!-- Thương hiệu liên kết -->
+        <div class="container my-5">
+
+            <div class="row my-4">
+
+                <div class="col-md-4" data-aos="fade-down" data-aos-duration="1500">
+
+                    <div class="khung">
+
+                        <a href="../pages/IKEA/IKEA.html" class="img-hover-zoom--colorize">
+                            <img style="height: 200px; width: 350px;" src="../img/IKEA/IKEA.jpg" alt="IKEA">
+                        </a>
+                        <div class="tenthuonghieu">IKEA</div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4" data-aos="fade-down" data-aos-duration="2000">
+
+                    <div class="khung">
+
+                        <a href="../pages/BO Concept/BO Concept.html" class="img-hover-zoom--colorize">
+                            <img style="height: 200px; width: 350px;" src="../img/Bo/BO Concept.jpg" alt="IKEA">
+                        </a>
+                        <div class="tenthuonghieu">BO Concept</div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4" data-aos="fade-down" data-aos-duration="2500">
+
+                    <div class="khung">
+
+                        <a href="../pages/SB/SB.html" class="img-hover-zoom--colorize">
+                            <img style="height: 200px; width: 350px;" src="../img/SB/SB Furniture.jpg" alt="IKEA">
+                        </a>
+                        <div class="tenthuonghieu">SB Furniture</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row my-4">
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500">
+
+                    <div class="khung">
+
+                        <a href="../pages/Ashley/ASHLEY.html" class="img-hover-zoom--colorize">
+                            <img style="height: 200px; width: 350px;" src="../img/Ashley/Ashley.jpg" alt="IKEA">
+                        </a>
+                        <div class="tenthuonghieu">ASHLEY</div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000">
+
+                    <div class="khung">
+
+                        <a href="../pages/Aaron/AARON.html" class="img-hover-zoom--colorize">
+                            <img style="height: 200px; width: 350px;" src="../img/Aaron/Aaron.jpg" alt="IKEA">
+                        </a>
+                        <div class="tenthuonghieu">AARON</div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2500">
+
+                    <div class="khung">
+
+                        <a href="../pages/DUNELM.html" class="img-hover-zoom--colorize">
+                            <img style="height: 200px; width: 350px;" src="../img/Dunelm/Dunelm.jpg" alt="IKEA">
+                        </a>
+                        <div class="tenthuonghieu">DUNELM</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container" style="padding-top: 30px;">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+                    <div>
+                        <h3>Brands</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./IKEA/IKEA.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+                            <a href="./AARON/AARON.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+                            <a href="./ASHLEY/ASHLEY.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+                            <a href="./DUNELM/DUNELM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+                            <a href="./BO Concept/BO Concept.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+                            <a href="./SB/SB.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Refer</h3>
+                        <ul style="line-height: 40px; list-style: none; margin-left: -40px; letter-spacing: 1px;">
+                            <a href="./KITCHEN.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+                            <a href="./LIVING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+                            <a href="./WORK.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+                            <a href="./CLASSROOM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>About</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./Gioithieu.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+                            <a href="./Lien_he.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a> <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/it.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a></div>
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liên kết Jquery -->
+    <script src="../../vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Liên kết AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Sticky -->
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "14px";
+                document.getElementById("header").style.background = "gray";
+                document.getElementById("header").style.height = "65px";
+                document.getElementById("header").style.padding = "10px";
+                document.getElementById("logo").style.height = "50px";
+                document.getElementById("logo").style.width = "100px";
+
+            } else {
+                document.getElementById("header").style.fontSize = "17px";
+                document.getElementById("header").style.background = "";
+                document.getElementById("header").style.padding = "45px";
+                document.getElementById("logo").style.width = "140px";
+                document.getElementById("logo").style.height = "85px";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

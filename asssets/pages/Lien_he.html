@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lien He</title>
+    <link rel="icon" type="image/x-icon" href="../img/icon.png" type="text/css">
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Header css -->
+    <style>
+        @media (max-width: 576px) {
+
+            #logo {
+                width: 40px;
+                height: 35px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 400px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 15%;
+                padding-top: 35%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+        @media (min-width: 576px) {
+            #logo {
+                width: 70px;
+                height: 65px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 450px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 20%;
+                padding-top: 30%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            #logo {
+                width: 90px;
+                height: 85px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 20%;
+                padding-top: 25%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 65px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 550px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 23%;
+                padding-top: 22%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 80px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 600px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 26%;
+                padding-top: 18%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 80px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+        }
+    </style>
+
+    <!-- Email+Address+Phone css -->
+    <style>
+        .textphanhoi {
+            color: rgb(36, 33, 33);
+            margin-left: 60px;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .duongnganglienhe {
+            position: absolute;
+            width: 55%;
+            height: 1px;
+            border-bottom: 2px solid grey;
+            top: 40px;
+            left: 3px;
+        }
+
+        .duongdunglienhe {
+            position: absolute;
+            height: 200px;
+            width: 1px;
+            border-left: 2px solid grey;
+            left: 42px;
+            top: 0px;
+        }
+
+        .duongdunglienhe1 {
+            position: absolute;
+            height: 200px;
+            width: 1px;
+            border-left: 2px solid grey;
+            left: 47px;
+            top: 0px;
+        }
+    </style>
+
+    <!-- Team css -->
+    <style>
+        .our-team-main {
+            width: 100%;
+            height: auto;
+            border-bottom: 5px #323233 solid;
+            background: #fff;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: 0.5s;
+            margin-bottom: 28px;
+        }
+
+
+        .our-team-main img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+            width: 90px;
+        }
+
+        .our-team-main h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .our-team-main p {
+            margin-bottom: 0;
+        }
+
+        .team-back {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 5px 15px 0 15px;
+            text-align: left;
+            background: #fff;
+
+        }
+
+        .team-front {
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 10;
+            background: #fff;
+            padding: 15px;
+            bottom: 0px;
+            transition: all 0.5s ease;
+        }
+
+        .our-team-main:hover .team-front {
+            bottom: -200px;
+            transition: all 0.5s ease;
+        }
+
+        .our-team-main:hover {
+            border-color: #777;
+            transition: 0.5s;
+        }
+    </style>
+
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
+
+        <a class="navbar-brand" style="color: white;" href="../../index.html">
+            <img src="../img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt="" loading="lazy">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="../../index.html">HOME</a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="../pages/Gioithieu.html">INTRODUCE</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BRANDs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./IKEA/IKEA.html">IKAE</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./BO Concept/BO Concept.html">BO Concept</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./ASHLEY/ASHLEY.html">ASHLEY</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./AARON/AARON.html">AARON</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./DUNELM/DUNELM.html">DUNELM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./SB/SB.html">SB Furniture</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown mx-4">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REFER
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./LIVING.html">DESIGN LIVINGROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./CLASSROOM.html">DESIGN CLASSROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./WORK.html">DESIGN WORKROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./KITCHEN.html">DESIGN KITCHEN</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="../pages/Lien_he.html">CONTACT US</a>
+                </li>
+
+            </ul>
+            <!-- item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../pages/Lien_he.html"><i class="fa fa-map" aria-hidden="true"
+                            style="font-size: 21px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a href="../pages/login.html"><i class="fa fa-user"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Head -->
+    <h1 data-aos="zoom-in" data-aos-duration="1500" class="h1">
+        CONTACT PAGE</h1>
+
+    <div class="img-fluid">
+        <img src="../img/Background/Header.jpg" alt="">
+    </div>
+
+
+
+    <!-- Team -->
+    <div class="container my-5">
+
+        <h1 class="text-center" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            INSTRUCTOR OF OUR TEAM</h1>
+
+        <!-- Thầy -->
+        <div class="row">
+
+            <div class="col-md-12 text-center">
+                <div class="our-team-main">
+
+                    <div class="team-front">
+                        <img src="../img/avt/thay.jpg" class="img-fluid" />
+                        <h3>Duong Nguyen Phu Cuong</h3>
+
+                    </div>
+
+                    <div class="team-back text-center" style="font-size: 30px;">
+                        <span>
+                            <i>
+
+
+                                <b>Email:</b> phucuong@ctu.edu.vn<br>
+                                <b>Phone:</b> 0946359742<br>
+                                <b>Role: Instructor</b>
+
+                            </i>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <h1 class="text-center mt-4" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">OUR
+            TEAM</h1>
+
+        <!-- 2 thằng -->
+        <div class="row">
+
+
+            <div class="col-md-6">
+
+                <div class="our-team-main">
+
+                    <div class="team-front">
+                        <img src="../img/avt/khai.jpg" class="img-fluid" />
+                        <h3>Ho Viet Khai</h3>
+                        <h4>A19086</h4>
+                    </div>
+
+                    <div class="team-back">
+                        <span>
+                            <i>
+                                <ul>
+                                    <li><b>ID:</b> Student1265542</li>
+                                    <li><b>Email:</b> hvkhaia19086@cusc.ctu.edu.vn</li>
+                                    <li><b>Phone:</b> 0932561455</li>
+                                    <li><b>Role: Project Leader/Tester</b></li>
+                                </ul>
+                            </i>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="our-team-main">
+
+                    <div class="team-front">
+                        <img src="../img/avt/truong.jpg" class="img-fluid" />
+                        <h3>Nguyen Ngoc Truong</h3>
+                        <h4>A19041</h4>
+                    </div>
+
+                    <div class="team-back">
+                        <span>
+                            <i>
+                                <ul>
+                                    <li><b>ID:</b> Student1220505</li>
+                                    <li><b>Email:</b> nntruonga19041@cusc.ctu.edu.vn</li>
+                                    <li><b>Phone:</b> 0947492641</li>
+                                    <li><b>Role: Analyst/ Developer/Tester/Designer</b></li>
+                                </ul>
+                            </i>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- 2 thằng nữa -->
+        <div class="row">
+
+
+            <div class="col-md-6">
+
+                <div class="our-team-main">
+
+                    <div class="team-front">
+                        <img src="../img/avt/binh.jpg" class="img-fluid" />
+                        <h3>Le Chau Thanh Binh</h3>
+                        <h4>A19077</h4>
+                    </div>
+
+                    <div class="team-back">
+                        <span>
+                            <i>
+                                <ul>
+                                    <li><b>ID:</b> Student1235333</li>
+                                    <li><b>Email:</b> lctbinha19077@cusc.ctu.edu.vn</li>
+                                    <li><b>Phone:</b> 0329160517</li>
+                                    <li><b>Role: Designer/Tester</b></li>
+                                </ul>
+                            </i>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="our-team-main">
+
+                    <div class="team-front">
+                        <img src="../img/avt/tri.jpg" class="img-fluid" />
+                        <h3>Truong Minh Tri</h3>
+                        <h4>A19042</h4>
+                    </div>
+
+                    <div class="team-back">
+                        <span>
+                            <i>
+                                <ul>
+                                    <li><b>ID:</b> Student1220517</li>
+                                    <li><b>Email:</b> tmtria19042@cusc.ctu.edu.vn</li>
+                                    <li><b>Phone:</b> 0938441905</li>
+                                    <li><b>Role: Implementation Engineer/ Developer/Tester</b></li>
+                                </ul>
+                            </i>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Email+Address+Phone -->
+    <div class="container mb-3">
+
+
+        <div class="row" style="margin-left: 40px;">
+
+            <div class="col-md-4 mt-5" data-aos="fade-right" data-aos-duration="1500">
+                <i style="color: goldenrod; font-size: 25px;" class="fa fa-map-marker" aria-hidden="true"></i>
+                <span style="color: black;font-size: 25px; margin-left: 60px; font-weight: 500;">Address</span>
+                <span class="duongdunglienhe"></span>
+                <span class="duongnganglienhe"></span>
+                <div class="textphanhoi">
+                    No.1 - Ly Tu Trong Street - Ninh Kieu Ward - Cantho City<br><br>
+                    Zone.2 - 3/2 Street - Xuan Khanh Ward - Cantho City
+                </div>
+            </div>
+
+
+            <div class="col-md-4 mt-5" data-aos="fade-right" data-aos-duration="2000">
+                <i style="color: goldenrod; font-size: 25px;" class="fa fa-envelope-o" aria-hidden="true"></i>
+                <span style="color: black;font-size: 25px; margin-left: 60px; font-weight: 500;">Email</span>
+                <span class="duongdunglienhe1"></span>
+                <span class="duongnganglienhe"></span>
+                <div class="textphanhoi" style="line-height: 40px;">
+                    tmtria19042@cusc.ctu.edu.vn<br>
+                    nntruonga19041@cusc.ctu.edu.vn<br>
+                    lctbinha19077@cusc.ctu.edu.vn<br>
+                    hvkhaia19086@cusc.ctu.edu.vn
+                </div>
+            </div>
+
+
+            <div class="col-md-4 mt-5" data-aos="fade-right" data-aos-duration="2000">
+                <i style="color: goldenrod; font-size: 25px;" class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                <span style="color: black;font-size: 25px; margin-left: 60px; font-weight: 500;">Phone</span>
+                <span class="duongdunglienhe"></span>
+                <span class="duongnganglienhe"></span>
+                <div class="textphanhoi">
+                    0938.441.905 (Hot Line)<br><br>
+                    0123.456.789 (Cold Line)<br><br>
+                    9876.543.210 (Time Line)
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Form + Map-->
+    <div class="container-fluid my-5">
+        <div class="row">
+
+            <div class="col-md-6" style="text-align: left; padding-left: 10px;" data-aos="fade-right"
+                data-aos-duration="1000">
+                <!--Form with header-->
+                <form class="needs-validation" method="post">
+                    <div class="card rounded-0" style="border-color: gold;">
+                        <div class="card-header p-0">
+                            <div class="text-white text-center py-2" style="background-color: #ffbf00fa;">
+                                <h3><i class="fa fa-envelope"></i> Contact us</h3>
+                                <p class="m-0">Please fill in your information so that we can help you the best</p>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+
+                            <!--Body-->
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text" style="color: #ffbf00fa;"><i
+                                                class="fa fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control " id="Name" placeholder="Your Name*"
+                                        required>
+                                    <div class="invalid-feedback" id="fbName">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text" style="color: #ffbf00fa;"><i
+                                                class="fa fa-envelope"></i></div>
+                                    </div>
+                                    <input type="email" class="form-control" id="Email" placeholder="Your Email*"
+                                        required>
+                                    <div class="invalid-feedback" id="fbEmail">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text" style="color: #ffbf00fa;"><i
+                                                class="fa fa-comment"></i></div>
+                                    </div>
+                                    <textarea class="form-control" id="Mess" placeholder="Your Massege*"
+                                        required></textarea>
+                                    <div class="invalid-feedback" id="fbMess">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <input type="button" id="button"
+                                    style="background-color: #ffbf00fa; color: white; font-size: 20px;" value="Send"
+                                    class="btn btn-block rounded-0 py-2">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                <!--Form with header-->
+            </div>
+
+            <div class="col-md-6" data-aos="zoom-in-left" data-aos-duration="1000">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.789540806039!2d105.77759651411124!3d10.03421857519895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0881ee38079b9%3A0xf281a75d8bf56fe2!2zTMO9IFThu7EgVHLhu41uZywgQW4gQ8awLCBOaW5oIEtp4buBdSwgQ-G6p24gVGjGoSwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1596026010154!5m2!1sen!2s"
+                    width="100%" height="340" frameborder="0" style="border:0; text-align: right;" allowfullscreen=""
+                    aria-hidden="false" tabindex="0">
+                </iframe>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container" style="padding-top: 30px;">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+                    <div>
+                        <h3>Brands</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./IKEA/IKEA.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+                            <a href="./AARON/AARON.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+                            <a href="./ASHLEY/ASHLEY.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+                            <a href="./DUNELM/DUNELM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+                            <a href="./BO Concept/BO Concept.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+                            <a href="./SB/SB.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Refer</h3>
+                        <ul style="line-height: 40px; list-style: none; margin-left: -40px; letter-spacing: 1px;">
+                            <a href="./KITCHEN.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+                            <a href="./LIVING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+                            <a href="./WORK.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+                            <a href="./CLASSROOM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>About</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./Gioithieu.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+                            <a href="./Lien_he.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a> <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/it.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a></div>
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Liên kết Jquery -->
+    <script src="../../vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Liên kết AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Sticky -->
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "14px";
+                document.getElementById("header").style.background = "gray";
+                document.getElementById("header").style.height = "65px";
+                document.getElementById("header").style.padding = "10px";
+                document.getElementById("logo").style.height = "50px";
+                document.getElementById("logo").style.width = "100px";
+
+            } else {
+                document.getElementById("header").style.fontSize = "17px";
+                document.getElementById("header").style.background = "";
+                document.getElementById("header").style.padding = "45px";
+                document.getElementById("logo").style.width = "140px";
+                document.getElementById("logo").style.height = "85px";
+            }
+        }
+    </script>
+
+    <!-- Form -->
+    <script>
+        $(document).ready(function () {
+
+            $('#button').click(function () {
+                debugger;
+                var Name = $('#Name').length;
+                var Email = $('#Email').val();
+                var Mess = $('#Mess').length;
+
+                if (Name < 5 || Name == 0) {
+                    $('#Name').addClass('is-invalid');
+                    $('#Name').removeClass('is-valid');
+                    $('#fbName').html("Length Name >= 5 characters")
+                }
+
+                if (Name > 5) {
+                    $('#Name').removeClass('is-invalid');
+                    $('#Name').addClass('is-valid');
+                    $('#fbName').html("OK");
+
+                }
+
+                if (Email.indexOf("@gmail.com") == -1) {
+                    $('#Email').addClass('is-invalid');
+                    $('#Email').removeClass('is-valid');
+                    $('#fbEmail').html('Email-address@gmail.com');
+                }
+
+                if (Email.indexOf("@gmail.com") != -1) {
+                    $('#Email').addClass('is-valid');
+                    $('#Name').removeClass('is-invalid');
+                    $('#fbEmail').html('OK');
+                }
+                if (Mess < 50 || Mess == 0) {
+                    $('#Mess').addClass('is-invalid');
+                    $('#Mess').removeClass('is-valid');
+                    $('#fbMess').html("Length Mess >= 50 characters")
+                }
+                if (Name > 50) {
+                    $('#Mess').removeClass('is-invalid');
+                    $('#Mess').addClass('is-valid');
+                    $('#fbMess').html("OK");
+
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

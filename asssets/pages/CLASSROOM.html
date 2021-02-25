@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASSROOM</title>
+    <link rel="icon" type="image/x-icon" href="../img/icon.png" type="text/css">
+
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Header css -->
+    <style>
+        @media (max-width: 576px) {
+
+            #logo {
+                width: 50px;
+                height: 55px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 400px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 10%;
+                padding-top: 35%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+        @media (min-width: 576px) {
+            #logo {
+                width: 70px;
+                height: 65px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 450px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 5%;
+                padding-top: 25%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            #logo {
+                width: 90px;
+                height: 85px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 5%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 65px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 550px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 5%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 6 0px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 600px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 15%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 60px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+        }
+    </style>
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
+
+        <a class="navbar-brand" style="color: white;" href="../../index.html">
+            <img src="../img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt="" loading="lazy">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="../../index.html">HOME</a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="../pages/Gioithieu.html">INTRODUCE</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BRANDs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./IKEA/IKEA.html">IKAE</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./BO Concept/BO Concept.html">BO Concept</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./ASHLEY/ASHLEY.html">ASHLEY</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./AARON/AARON.html">AARON</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./DUNELM/DUNELM.html">DUNELM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./SB/SB.html">SB Furniture</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown mx-4">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REFER
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./LIVING.html">DESIGN LIVINGROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./CLASSROOM.html">DESIGN CLASSROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./WORK.html">DESIGN WORKROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./KITCHEN.html">DESIGN KITCHEN</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="../pages/Lien_he.html">CONTACT US</a>
+                </li>
+
+            </ul>
+            <!-- item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../pages/Lien_he.html"><i class="fa fa-map" aria-hidden="true"
+                            style="font-size: 21px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a href="../pages/login.html"><i class="fa fa-user"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Head -->
+    <h1 data-aos="zoom-in" data-aos-duration="1500" class="h1">
+        CLASSROOM DESIGN FEEL TO LEARN</h1>
+    <div class="img-fluid">
+        <img src="../img/CLASSROOM/TK-phonghoc.jpg" alt="">
+    </div>
+
+    <!-- Nội dung -->
+    <div class="container my-4 ">
+
+        <div class="row">
+
+            <!-- Nội dung -->
+            <div class="col-md-9 mt-5" style="font-style: italic;">
+
+                <h1 style="font-style: normal;">General requirements for the layout of classroom space</h1><br>
+                <h4>Arranging classroom space</h4>
+                Stemming from parents' concern about their children's future and the desire to give their children
+                effective living spaces for learning. Therefore, more and more homeowners are interested in the design
+                of the classroom. Not just a desk and chair to study,
+                but the comfort of your child's study is also more favored.
+                <br> And of course, learning is not only for children, but adults also need to learn. Therefore, for
+                different users, there will be a different design. And if you are confused about how to design it for
+                your purpose, this article will
+                help you get the best choice.
+                <br><br>
+                <img src="../img/CLASSROOM/TK-phonghoc.jpg" style="width:100%" alt="">
+                <div class="text-center">
+                    The kitchen needs meticulous calculation in each design step, prioritizing convenience over
+                    aesthetics like other areas.
+                </div>
+                <br> The symmetry in the design makes different items synchronous and neat. So, a cabinet with the
+                asymmetrical design is a great storage solution for your living room. The drawers are evenly divided on
+                a flat surface, creating the feeling
+                of a second wall.
+                <br> If you want the room to be more interesting, you can completely get creative with different
+                colors, patterns, and materials. This is also the advice of Darla DeMorrow, an interior specialist at
+                HeartWork Organizing.
+                <br><br>
+                <img style="width: 100%;" src="../img/CLASSROOM/2.jpg" alt="">
+                <div class="text-center mb-4">
+                    When designing a kitchen based on the principle, it is necessary to flexibly adjust for the
+                    homeowner to use it conveniently
+                </div><br>
+                <h4>Hide clutter in tight compartments</h4>
+                The symmetry in the design makes different items synchronous and neat. So, a cabinet with the
+                asymmetrical design is a great storage solution for your living room. The drawers are evenly divided on
+                a flat surface, creating the feeling of a second wall.
+                If you want the room to be more interesting, you can completely get creative with different colors,
+                patterns, and materials. This is also the advice of Darla DeMorrow, an interior specialist at HeartWork
+                Organizing
+                <br><br>
+                <img style="width: 100%;" src="../img/CLASSROOM/3.jpg" alt="">
+                <div class="text-center mb-4">
+                    The kitchen and living room or living room together will make the kitchen airier as well as create a
+                    cozy kitchen.
+                </div>
+                <h4> Note the arrangement of household appliances when designing the kitchen</h4>
+                When arranging household appliances in the kitchen, you need to pay attention to the following: Kitchen
+                location is at least 60cm from the sink. The distance between the two cookers is at least 30m so that
+                the handles do not touch each other. Kitchen
+                not arranged near open doors or under windows or large objects The dishwasher should be located near the
+                sink for convenience of use. Avoid placing appliances in the corner of the kitchen. For cupboards and
+                truss doors, it should be easy
+                to open and access, especially when placing them in the corners of the kitchen
+                <br><br>
+                <img style="width: 100%;" src="../img/CLASSROOM/4.jpg" alt="">
+                <div class="text-center mb-4">
+                    The cupboard should be easy to open and access to ensure convenience during use
+                </div>
+                <h4> Kitchen lighting is an important note when designing the kitchen</h4>
+                The kitchen is where a lot of light is needed. Light is crucial to the cooking process and helps you
+                cook better. During the cooking process, you certainly do not want to be influenced by your own shadow.
+                Therefore, install the lighting system in front
+                of the cook. It is best to install the lighting systems right under the kitchen cabinet system to have a
+                light source for cooking.
+                <br> We have just learned the notes when designing the kitchen. The article synthesizes architectural
+                notes as well as feng shui when designing the kitchen area, one of the most important areas of the
+                house.
+                <br><br> We all want the most ideal kitchen. And the ideal kitchen is the kitchen that suits the needs
+                of use, creating comfort for the homeowner Wish you have a suitable and satisfying home design.
+
+            </div>
+
+            <!-- Những bài tham khảo -->
+            <div class="col-md-3">
+                <div class="list-group" style="position: sticky; top: 70px;">
+                    <li class="list-group-item list-group-item-dark"><span
+                            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">REFER</span>
+                    </li>
+                    <a href="./KITCHEN.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">KITCHEN</button></a>
+                    <a href="./WORK.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">WORKROOM</button></a>
+                    <a href="./LIVING.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">LIVINGROOM</button></a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container" style="padding-top: 30px;">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+                    <div>
+                        <h3>Brands</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./IKEA/IKEA.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+                            <a href="./AARON/AARON.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+                            <a href="./ASHLEY/ASHLEY.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+                            <a href="./DUNELM/DUNELM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+                            <a href="./BO Concept/BO Concept.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+                            <a href="./SB/SB.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Refer</h3>
+                        <ul style="line-height: 40px; list-style: none; margin-left: -40px; letter-spacing: 1px;">
+                            <a href="./KITCHEN.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+                            <a href="./LIVING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+                            <a href="./WORK.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+                            <a href="./CLASSROOM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>About</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./Gioithieu.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+                            <a href="./Lien_he.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a> <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/it.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a></div>
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liên kết Jquery -->
+    <script src="../../vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Liên kết AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Sticky -->
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "14px";
+                document.getElementById("header").style.background = "gray";
+                document.getElementById("header").style.height = "65px";
+                document.getElementById("header").style.padding = "10px";
+                document.getElementById("logo").style.height = "50px";
+                document.getElementById("logo").style.width = "100px";
+
+            } else {
+                document.getElementById("header").style.fontSize = "17px";
+                document.getElementById("header").style.background = "";
+                document.getElementById("header").style.padding = "45px";
+                document.getElementById("logo").style.width = "140px";
+                document.getElementById("logo").style.height = "85px";
+            }
+        }
+    </script>
+</body>
+
+
+</html>

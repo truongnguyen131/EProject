@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare</title>
+    <link rel="icon" type="image/x-icon" href="../img/icon.png" type="text/css">
+
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Header css -->
+    <style>
+        #header {
+            padding-right: 44px;
+            padding-left: 47px;
+            padding-top: 5px;
+            color: black;
+            font-size: 17px;
+            position: fixed;
+            top: 0;
+            transition: 0.6s;
+        }
+
+        #logo {
+            width: 140px;
+            height: 85px;
+        }
+
+        .navbar {
+            text-align: center;
+        }
+    </style>
+
+    <!-- Table css -->
+
+    <style>
+        table img {
+            width: 200px;
+        }
+    </style>
+
+    <!-- Cart css -->
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(248, 248, 248);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: black;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .bntcart {
+            position: relative;
+            margin-top: 2px;
+            font-size: 20px;
+            width: 150px;
+            height: 45px;
+        }
+
+        .bntcart:hover {
+            color: white;
+            background-color: goldenrod;
+            transition: 0.2s;
+            box-shadow: 0 0 10px gold;
+            border: 3px solid gold;
+            border-radius: 50px;
+        }
+    </style>
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="header">
+
+        <a class="navbar-brand" style="color: white;" href="../../index.html">
+            <img src="../img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt="" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="../../index.html">HOME</a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="Gioithieu.html">INTRODUCE</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BRANDs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="BO Concept/BO Concept.html">BO Concept</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="ASHLEY/ASHLEY.html">ASHLEY</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="AARON/AARON.html">AARON</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="DUNELM/DUNELM.html">DUNELM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="IKEA/IKEA.html">IKEA</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown mx-4">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REFER
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="LIVING.html">DESIGN LIVINGROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="CLASSROOM.html">DESIGNCLASSROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="WORK.html">DESIGN WORKROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="KITCHEN.html">DESIGN KITCHEN</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="Lien_he.html">CONTACT US</a>
+                </li>
+
+            </ul>
+            <!-- Item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+
+                    <!-- Cart -->
+                    <div id="mySidenav" class="sidenav text-center">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                        <ul class="list-group">
+
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../img/Ashley/Ashley-1.jpg" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Parlor Chair</h5>
+                                        <div style="font-size: 16px;">MSP: A572521</div>
+                                        <h5 style="color: red;">4.500.000VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../img/Ashley/Ashley-2.jpg" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Sebastian Chair</h5>
+                                        <div style="font-size: 16px;">MSP: A368445</div>
+                                        <h5 style="color: red;">12.000.000VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../img/Ashley/Ashley-3.jpg" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Viv Swivel Chair</h5>
+                                        <div style="font-size: 16px;">MSP: A156731</div>
+                                        <h5 style="color: red;">13.000.000 VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <div style="font-size: 18px;">Tổng tiền : <h5 style="color: red;">29.500.000 VND</h5>
+                        </div>
+                        <a href="login.html"><button type="button" class="bntcart">Tính
+                                Tiền</button></a>
+
+
+                    </div>
+
+
+                    <a style="cursor:pointer; " onclick="openNav()"><i class="fa fa-shopping-cart" aria-hidden="true"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i>
+                    </a>
+
+                </li>
+                <li class="nav-item mx-4">
+                    <a href="login.html"><i class="fa fa-user"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+    <div style="height: 150px;"></div>
+    <div style="overflow-x: auto;">
+        <table>
+            <tr>
+                <td>
+                    <pre>                   </pre>
+                </td>
+                <td><img src="../img/AARON/Aaron-1.jpg" alt=""></td>
+                <td><img src="../img/AARON/Aaron-2.jpg" alt=""></td>
+                <td><img src="../img/AARON/Aaron-3.jpg" alt=""></td>
+                <td><img src="../img/AARON/Aaron-4.jpg" alt=""></td>
+                <td><img src="../img/AARON/Aaron-5.jpg" alt=""></td>
+                <td><img src="../img/AARON/Aaron-6.jpg" alt=""></td>
+                <td><img src="../img/AARON/Aaron-7.jpg" alt=""></td>
+                <td><img src="../img/AARON/Aaron-8.jpg" alt=""></td>
+                <td><img src="../img/AARON/Aaron-9.jpg" alt=""></td>
+                <td><img src="../img/Bo/1.webp" alt=""></td>
+                <td><img src="../img/Bo/2.webp" alt=""></td>
+                <td><img src="../img/Bo/3.webp" alt=""></td>
+                <td><img src="../img/Bo/4.webp" alt=""></td>
+                <td><img src="../img/Bo/5.webp" alt=""></td>
+                <td><img src="../img/Bo/6.jpg" alt=""></td>
+                <td><img src="../img/Bo/7.webp" alt=""></td>
+                <td><img src="../img/Bo/8.webp" alt=""></td>
+                <td><img src="../img/Bo/9.webp" alt=""></td>
+            </tr>
+            <tr class="text-dark text-center">
+                <th>Name</th>
+                <td>Carlo Mid-Century Chair</td>
+                <td>Auburn Chair</td>
+                <td>Haven Swivel Chair</td>
+                <td>Everett Chsir</td>
+                <td>Olive Chair</td>
+                <td>Hemming Swivel Armchair</td>
+                <td>Rhys Mid-Century Recliner</td>
+                <td>Haven Chair</td>
+                <td>Ryder Chair</td>
+                <td>Tabita Chair</td>
+                <td>Lilia Chair</td>
+                <td>Eria Chair</td>
+                <td>Mohican Chair</td>
+                <td>Boba Chair</td>
+                <td>Leona Chair</td>
+                <td>Klorey Chair</td>
+                <td>Jarreau Chair</td>
+                <td>Nesso Accent Chair</td>
+            </tr>
+            <tr class="text-black-50 text-center">
+                <th>Product Code</th>
+                <td>A898642</td>
+                <td>A173242</td>
+                <td>A725727</td>
+                <td>A464578</td>
+                <td>A154642</td>
+                <td>A849323</td>
+                <td>A784246</td>
+                <td>A727893</td>
+                <td>A145431</td>
+                <td>A19059</td>
+                <td>A19089</td>
+                <td>A19090</td>
+                <td>A19042</td>
+                <td>A19053</td>
+                <td>A19066</td>
+                <td>A19079</td>
+                <td>A19055</td>
+                <td>A19012</td>
+            </tr>
+            <tr class="text-danger text-center">
+                <th>Price</th>
+                <td>14.000.000VND</td>
+                <td>11.000.000VND</td>
+                <td>8.000.000VND</td>
+                <td>11.000.000VND</td>
+                <td>20.000.000VND</td>
+                <td>13.000.000VND</td>
+                <td>14.000.000VND</td>
+                <td>16.000.000VND</td>
+                <td>13.000.000VND</td>
+                <td>1.050.000VND</td>
+                <td>790.000VND</td>
+                <td>3.000.000VND</td>
+                <td>500.900VND</td>
+                <td>990.000VND</td>
+                <td>1.009.000VND</td>
+                <td>400.000VND</td>
+                <td>800.000VND</td>
+                <td>300.000VND</td>
+            </tr>
+            <tr class="text-black-50 text-center">
+                <th>Spring cushion</th>
+                <td>▣</td>
+                <td>▣</td>
+                <td>▣</td>
+                <td>▣</td>
+                <td>▣</td>
+                <td>▣</td>
+                <td>▣</td>
+                <td>▣</td>
+                <td>▣</td>
+                <td>▢</td>
+                <td>▢</td>
+                <td>▢</td>
+                <td>▢</td>
+                <td>▢</td>
+                <td>▢</td>
+                <td>▢</td>
+                <td>▢</td>
+                <td>▢</td>
+            </tr>
+            <tr class="text-black-50 text-center">
+                <th>Material</th>
+                <td>Cotton</td>
+                <td>Cotton</td>
+                <td>Cotton</td>
+                <td>Cotton</td>
+                <td>Cotton</td>
+                <td>Cotton</td>
+                <td>Cotton</td>
+                <td>Cotton</td>
+                <td>Cotton</td>
+                <td>Oak wood</td>
+                <td>Fir</td>
+                <td>Stainless Steel</td>
+                <td>Synthetic Resins</td>
+                <td>Stainless Steel</td>
+                <td>Rattan</td>
+                <td>Cotton</td>
+                <td>rattan</td>
+                <td>rattan</td>
+            </tr>
+
+        </table>
+    </div>
+    <div style="height: 70px;"></div>
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;">
+        <div class="container" style="padding-top: 30px;">
+
+            <div class="row">
+
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+
+                    <div>
+                        <h3>Brands</h3>
+
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="IKEA/IKEA.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+
+                            <a href="AARON/AARON.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+
+                            <a href="ASHLEY/ASHLEY.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+
+                            <a href="DUNELM/DUNELM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+
+                            <a href="BO/BO.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+
+                            <a href="SB/SB.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3 style="margin-left: -20px;">Refer</h3>
+
+                        <ul style="line-height: 40px; list-style: none; margin-left: -60px; letter-spacing: 1px;">
+                            <a href="DINING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+
+                            <a href="../LIVING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+
+                            <a href="WORK.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+
+                            <a href="CLASS.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+
+                    <div>
+                        <h3>About</h3>
+
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="Gioithieu.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+
+                            <a href="Lien_he.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a> <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/it.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a></div>
+
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Liên kết Jquery -->
+    <script src="../../vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Cart -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <!-- Số lượng as -->
+    <script>
+        $(document).ready(function () {
+            var SoLuong = $('#soluongas').val();
+            SoLuong = parseInt(SoLuong);
+
+            $('#tangas').click(function () {
+                SoLuong += 1;
+                $('#soluongas').val(SoLuong);
+            });
+            $('#giamas').click(function () {
+                if (SoLuong > 1) {
+                    SoLuong -= 1;
+                    $('#soluongas').val(SoLuong);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORKROOM</title>
+    <link rel="icon" type="image/x-icon" href="../img/icon.png" type="text/css">
+
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Header css -->
+    <style>
+        @media (max-width: 576px) {
+
+            #logo {
+                width: 50px;
+                height: 55px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 400px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 10%;
+                padding-top: 35%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+        @media (min-width: 576px) {
+            #logo {
+                width: 70px;
+                height: 65px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 450px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 5%;
+                padding-top: 25%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            #logo {
+                width: 90px;
+                height: 85px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 5%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 65px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 550px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 5%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 6    0px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 600px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 18%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 60px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+        }
+    </style>
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
+
+        <a class="navbar-brand" style="color: white;" href="../../index.html">
+            <img src="../img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt="" loading="lazy">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="../../index.html">HOME</a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="../pages/Gioithieu.html">INTRODUCE</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BRANDs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./IKEA/IKEA.html">IKAE</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./BO Concept/BO Concept.html">BO Concept</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./ASHLEY/ASHLEY.html">ASHLEY</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./AARON/AARON.html">AARON</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./DUNELM/DUNELM.html">DUNELM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./SB/SB.html">SB Furniture</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown mx-4">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REFER
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./LIVING.html">DESIGN LIVINGROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./CLASSROOM.html">DESIGN CLASSROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./WORK.html">DESIGN WORKROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./KITCHEN.html">DESIGN KITCHEN</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="../pages/Lien_he.html">CONTACT US</a>
+                </li>
+
+            </ul>
+            <!-- item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../pages/Lien_he.html"><i class="fa fa-map" aria-hidden="true"
+                            style="font-size: 21px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a href="../pages/login.html"><i class="fa fa-user"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Head -->
+    <h1 data-aos="zoom-in" data-aos-duration="1500" class="h1">
+        SMART WORKING ROOM DESIGN</h1>
+    <div class="img-fluid">
+        <img src="../img/WORK/background-work.jpg" alt="">
+    </div>
+
+    <!-- Nội dung -->
+    <div class="container my-4 ">
+
+        <div class="row">
+
+            <!-- Nội dung -->
+            <div class="col-md-9 mt-5" style="font-style: italic;">
+                <h1 style="font-style: normal;">SMART WORKTABLE MODELS EXPECT TO HOT ON THE OFFICE FURNITURE MARKET IN 2020</h1><br>
+                Home offices are as much a part of the modern home as formal dining rooms these days - in fact, many of us repurpose underused dining areas as workspaces! A home office can be set up within almost any room. Small study areas in bedrooms are commonplace, double workspaces pop up in living rooms to accommodate demand, and even the kitchen often has more than one kind of ‘worktop’. Once you’ve found a good spot, what about the colour scheme, desk design, chair style, shelving needs, and storage furniture to keep the whole thing neat and tidy enough to live with full time?
+                <br>
+                Invigorate your working mind with a bright and welcoming colour. If you want your workspace to be inviting (and we all no that feeling of being repelled by a boring looking desk) then lay out the welcome mat, so to speak. Whack on a welcoming colour like this bright sunshine yellow to chase away a Monday morning feeling of gloom.
+                <br><br>
+                <img src="../img/WORK/1.jpg" style="width: 100%" alt="">
+                <div class="text-center">
+                    Carve out a section of your room using colour coordination.
+                </div>
+                <br>
+                If you don’t like the idea of being holed away from family life when in the home office, then how about a glass dividing wall? Screen out excess noise and even cooking smells (if that’s your work domain) but remain part of the action. White decor, a minimalist desk and a slender led desk lamp keeps the work stuff paled into the background.
+                <br><br>
+                <img src="../img/WORK/2.jpg" style="width: 100%" alt="">
+                <div class="text-center mb-4">
+                    Screen off noise without blocking off the visual.
+                </div>
+                <h3 style="font-style: normal;">Pep up an existing plain home workspace</h3><br>
+                <h4>Want your home workspace to meld more with the room?
+                </h4>
+                Colour match all office furniture and shelving with the wall paint colour. This home office features a stripe of mirror behind the desk to reflect the rest of the room decor too. Colour match all office furniture and shelving with the wall paint colour. This home office features a stripe of mirror behind the desk to reflect the rest of the room decor too.
+                <br><br>
+                <img src="../img/WORK/3.jpg" style="width: 100%" alt="">
+                <div class="text-center mb-4">
+                    Use texture to add interest to a single hued set up.
+                </div>
+                <h4> LED strip lights can be used to create ambiance and drama.</h4>
+                Bring in greenery to liven up a stagnant scheme.
+
+                Make your creative space POP. Pop art wall decor and colours combine to make this study area and drawing desk into one inspirational space. Nothing feels quite so inspirational as green spaces. If you can, build your home workspace in front of a window with a garden view, incorporate a courtyard or indoor vertical garden, or even bring in a nature themed wall mural. Nothing feels quite so inspirational as green spaces. If you can, build your home workspace in front of a window with a garden view, incorporate a courtyard or indoor vertical garden, or even bring in a nature themed wall mural.
+                <br><br>
+                <img src="../img/WORK/4.jpg" style="width: 100%" alt="">
+                <div class="text-center mb-4">
+                    Display of treasured items.
+                </div>
+                <h4> Unexpected elements and colour create a fun work environment that you’ll enjoy coming back to.</h4>
+                Set the scene. Kids workspaces are pretty essential these days with the amount of homework continually rising. If they’ve got a dedicated, comfortable and attractive area in which to do their work, it may be easier to persuade them to crack those books. Don’t want your study area to be attention grabbing? Keep the design minimalist with hidden recessed shelves, a slimline desk and a low backed chair so is a good idea.
+
+                <br><br>
+                <img src="../img/WORK/5.jpg" style="width: 100%" alt="">
+                <div class="text-center mb-4">
+                    Easily distracted? Keep the location and the decor quiet to aid concentration.
+                </div>
+                Include plenty of lighting. Directional spotlights put the light source right where it’s needed.
+                <br>
+                Drape with drama. Whether you’re a big boss or not, you are the boss at home. Design yourself a dramatic room where you can reign supreme.
+
+
+            </div>
+
+            <!-- Những bài tham khảo -->
+            <div class="col-md-3">
+                <div class="list-group" style="position: sticky; top: 70px;">
+                    <li class="list-group-item list-group-item-dark"><span
+                            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">REFER</span></li>
+                    <a href="./LIVING.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">LIVINGROOM</button></a>
+                    <a href="./KITCHEN.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">KITCHEN</button></a>
+                    <a href="./CLASSROOM.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">CLASSROOM</button></a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container" style="padding-top: 30px;">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+                    <div>
+                        <h3>Brands</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./IKEA/IKEA.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+                            <a href="./AARON/AARON.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+                            <a href="./ASHLEY/ASHLEY.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+                            <a href="./DUNELM/DUNELM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+                            <a href="./BO Concept/BO Concept.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+                            <a href="./SB/SB.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Refer</h3>
+                        <ul style="line-height: 40px; list-style: none; margin-left: -40px; letter-spacing: 1px;">
+                            <a href="./KITCHEN.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+                            <a href="./LIVING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+                            <a href="./WORK.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+                            <a href="./CLASSROOM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>About</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./Gioithieu.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+                            <a href="./Lien_he.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a> <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/it.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a></div>
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liên kết Jquery -->
+    <script src="../../vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Liên kết AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Sticky -->
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "14px";
+                document.getElementById("header").style.background = "gray";
+                document.getElementById("header").style.height = "65px";
+                document.getElementById("header").style.padding = "10px";
+                document.getElementById("logo").style.height = "50px";
+                document.getElementById("logo").style.width = "100px";
+
+            } else {
+                document.getElementById("header").style.fontSize = "17px";
+                document.getElementById("header").style.background = "";
+                document.getElementById("header").style.padding = "45px";
+                document.getElementById("logo").style.width = "140px";
+                document.getElementById("logo").style.height = "85px";
+            }
+        }
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-project</title>
+    <link rel="icon" type="image/x-icon" href="./asssets/img/icon.png" type="text/css">
+
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Liên kết CSS Slick -->
+    <link rel="stylesheet" type="text/css" href="./vendor/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./vendor/slick-1.8.1/slick/slick-theme.css" />
+
+
+
+
+    <!-- Scroll -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <!-- Header css -->
+    <style>
+        @media (max-width: 576px) {
+
+            #logo {
+                width: 50px;
+                height: 55px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 400px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 10%;
+                padding-top: 35%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+        @media (min-width: 576px) {
+            #logo {
+                width: 70px;
+                height: 65px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 20%;
+                padding-top: 30%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            #logo {
+                width: 90px;
+                height: 85px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 600px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 20%;
+                padding-top: 25%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 65px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 650px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 23%;
+                padding-top: 22%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 80px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 700px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 23%;
+                padding-top: 22%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 80px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+        }
+    </style>
+
+
+    <!-- Introduce css -->
+    <style>
+        @media (max-width: 576px) {
+            .gioithieu {
+                padding-top: 40px;
+                position: relative;
+            }
+
+            .duongnganggioithieu1 {
+                display: none;
+            }
+
+            .duongnganggioithieu2 {
+                display: none;
+            }
+
+            .duongdunggioithieu {
+                display: none;
+            }
+
+            .bntgioithieu {
+                position: absolute;
+                color: black;
+                height: 50px;
+                font-size: 20px;
+                font-weight: 500;
+                margin-top: 70%;
+                margin-left: 30%;
+            }
+
+            .bntgioithieu:hover {
+                color: white;
+                background-color: goldenrod;
+                transition: 0.2s;
+                box-shadow: 0 0 30px gold;
+                border: 3px solid gold;
+                border-radius: 50px;
+
+            }
+
+            .textgioithieu {
+                position: absolute;
+                width: 100%;
+                margin-left: 0;
+                margin-top: 20px;
+                font-size: 13px;
+            }
+
+            .wwa {
+                display: none;
+            }
+        }
+
+        @media (min-width: 576px){
+            .textgioithieu {
+                position: absolute;
+                width: 580px;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .bntgioithieu {
+                position: absolute;
+                color: black;
+                height: 55px;
+                font-size: 20px;
+                font-weight: 500;
+                margin-top: 20px;
+                margin-left: 250px;
+            }
+                
+        }
+
+        @media (min-width: 765px){
+            .textgioithieu {
+                position: absolute;
+                width: 580px;
+                margin-left: 130px;
+                margin-top: 20px;
+            }
+
+            .bntgioithieu {
+                position: absolute;
+                color: black;
+                height: 55px;
+                font-size: 20px;
+                font-weight: 500;
+                margin-top: 350px;
+                margin-left: 300px;
+            }
+
+                
+        }
+
+        @media (min-width: 992px) {
+            .gioithieu {
+                position: relative;
+            }
+
+            .duongnganggioithieu1 {
+                position: absolute;
+                width: 40%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                bottom: -2px;
+                margin-left: -30%;
+            }
+
+            .duongnganggioithieu2 {
+                position: absolute;
+                width: 80%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                bottom: -350px;
+                margin-left: -30%;
+            }
+
+            .duongdunggioithieu {
+                position: absolute;
+                height: 950%;
+                width: 1px;
+                border-left: 2px solid grey;
+                left: 95px;
+            }
+
+            .bntgioithieu {
+                position: absolute;
+                color: black;
+                height: 55px;
+                font-size: 20px;
+                font-weight: 500;
+                margin-top: 365px;
+                margin-left: 290px;
+            }
+
+            .bntgioithieu:hover {
+                color: white;
+                background-color: goldenrod;
+                transition: 0.2s;
+                box-shadow: 0 0 30px gold;
+                border: 3px solid gold;
+                border-radius: 50px;
+
+            }
+
+            .textgioithieu {
+                position: absolute;
+                width: 580px;
+                margin-left: 130px;
+                margin-top: 20px;
+            }
+
+            .wwa {
+                position: absolute;
+                transform: rotate(-90deg);
+                margin-left: -50%;
+                margin-top: 30%;
+                font-size: 20px;
+                letter-spacing: 5.2px;
+                word-spacing: 5px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            .gioithieu {
+                position: relative;
+            }
+
+            .duongnganggioithieu1 {
+                position: absolute;
+                width: 40%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                bottom: -2px;
+                margin-left: -30%;
+            }
+
+            .duongnganggioithieu2 {
+                position: absolute;
+                width: 80%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                bottom: -350px;
+                margin-left: -30%;
+            }
+
+            .duongdunggioithieu {
+                position: absolute;
+                height: 950%;
+                width: 1px;
+                border-left: 2px solid grey;
+                left: 95px;
+            }
+
+            .bntgioithieu {
+                position: absolute;
+                color: black;
+                height: 55px;
+                font-size: 20px;
+                font-weight: 500;
+                margin-top: 365px;
+                margin-left: 290px;
+            }
+
+            .bntgioithieu:hover {
+                color: white;
+                background-color: goldenrod;
+                transition: 0.2s;
+                box-shadow: 0 0 30px gold;
+                border: 3px solid gold;
+                border-radius: 50px;
+
+            }
+
+            .textgioithieu {
+                position: absolute;
+                width: 580px;
+                margin-left: 130px;
+                margin-top: 20px;
+            }
+
+            .wwa {
+                position: absolute;
+                transform: rotate(-90deg);
+                margin-left: -38%;
+                margin-top: 200px;
+                font-size: 20px;
+                letter-spacing: 5.2px;
+                word-spacing: 5px;
+            }
+        }
+    </style>
+
+
+    <!-- Refer css -->
+    <style>
+        @media (max-width: 576px) {
+            .counter1 {
+                display: none;
+            }
+
+            .counter2 {
+                display: none;
+            }
+
+            .counter3 {
+                display: none;
+            }
+
+            .slider {
+                width: 83%;
+                margin: 0px auto;
+                margin-left: 50px;
+            }
+
+            .slick-slide img {
+                width: 500px;
+                height: 400px;
+            }
+
+            .textthamkhao {
+                font-size: 15px;
+                text-align: center;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+
+
+            .bntthamkhao {
+                position: absolute;
+                height: 45px;
+                width: 150px;
+                font-size: 18px;
+                font-weight: 500;
+                margin-left: 200px;
+                margin-top: -250px;
+                opacity: 0;
+            }
+        }
+
+
+        @media (min-width: 577px) {
+
+
+            .slider {
+                width: 83%;
+                margin: 0px auto;
+                margin-left: 50px;
+            }
+
+            .slick-slide img {
+                width: 600px;
+                height: 500px;
+            }
+
+            .textthamkhao {
+                font-size: 15px;
+                text-align: center;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+
+            .bntthamkhao {
+                position: absolute;
+                height: 45px;
+                width: 150px;
+                font-size: 18px;
+                font-weight: 500;
+                margin-left: 250px;
+                margin-top: -300px;
+                opacity: 0;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            .counter1 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 80px;
+            }
+
+            .counter2 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 290px;
+            }
+
+            .counter3 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 500px;
+            }
+
+            .slider {
+                width: 83%;
+                margin: 0px auto;
+                margin-left: 70px;
+            }
+
+            .slick-slide img {
+                width: 700px;
+                height: 600px;
+            }
+
+            .textthamkhao {
+                font-size: 15px;
+                text-align: center;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+
+
+            .bntthamkhao {
+                position: absolute;
+                height: 45px;
+                width: 150px;
+                font-size: 18px;
+                font-weight: 500;
+                margin-left: 300px;
+                margin-top: -350px;
+                opacity: 0;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            .counter1 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 80px;
+            }
+
+            .counter2 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 290px;
+            }
+
+            .counter3 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 500px;
+            }
+
+            .slider {
+                width: 83%;
+                margin: 0px auto;
+                margin-left: 130px;
+            }
+
+            .slick-slide img {
+                width: 700px;
+                height: 500px;
+            }
+
+            .textthamkhao {
+                font-size: 20px;
+                text-align: center;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .duongngangthamkhao {
+                position: absolute;
+                width: 20%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                bottom: -2px;
+                margin-left: -14%;
+            }
+
+            .duongdungthamkhao {
+                position: absolute;
+                height: 850%;
+                width: 1px;
+                border-left: 2px solid grey;
+                left: 95px;
+                top: 7px;
+            }
+
+            .bntthamkhao {
+                position: absolute;
+                height: 45px;
+                width: 150px;
+                font-size: 18px;
+                font-weight: 500;
+                margin-left: 300px;
+                margin-top: -340px;
+                opacity: 0;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+            .counter1 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 80px;
+            }
+
+            .counter2 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 290px;
+            }
+
+            .counter3 {
+                padding: 20px 0;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                margin-top: 180px;
+                margin-left: 500px;
+            }
+
+            .slider {
+                width: 83%;
+                margin: 0px auto;
+                margin-left: 130px;
+            }
+
+            .slick-slide img {
+                width: 700px;
+                height: 500px;
+            }
+
+            .textthamkhao {
+                font-size: 20px;
+                text-align: center;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .duongngangthamkhao {
+                position: absolute;
+                width: 20%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                bottom: -2px;
+                margin-left: -14%;
+            }
+
+            .duongdungthamkhao {
+                position: absolute;
+                height: 850%;
+                width: 1px;
+                border-left: 2px solid grey;
+                left: 95px;
+                top: 7px;
+            }
+
+            .bntthamkhao {
+                position: absolute;
+                height: 45px;
+                width: 150px;
+                font-size: 18px;
+                font-weight: 500;
+                margin-left: 300px;
+                margin-top: -340px;
+                opacity: 0;
+            }
+        }
+
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+
+
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: 1;
+        }
+
+        .slick-active {
+            opacity: 0;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+
+        .thamkhao {
+            position: relative;
+        }
+
+
+        .bntthamkhao:hover {
+            color: white;
+            background-color: goldenrod;
+            transition: 0.3s;
+            border: 3px solid gold;
+        }
+
+        .thaokham:hover .imgTK {
+            opacity: 0.4;
+            transition: 0.5s;
+        }
+
+        .thaokham:hover .bntthamkhao {
+            opacity: 1;
+        }
+    </style>
+
+
+    <!-- Counter css -->
+    <style>
+        .count-title {
+            color: goldenrod;
+            font-size: 50px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .count-text {
+            font-size: 20px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+    </style>
+
+
+    <!-- Brands css -->
+    <style>
+        @media (max-width: 576px) {
+
+            .imgB {
+                height: 200px;
+                width: 288px;
+            }
+
+            .khung {
+
+                margin-top: 30px;
+                height: 200px;
+                width: 288px;
+                overflow: hidden;
+            }
+
+            .khung:hover .tenthuonghieu {
+                opacity: 0.8;
+                color: gold;
+            }
+
+            .tenthuonghieu {
+                background-color: rgba(196, 192, 192, 0.603);
+                height: 35px;
+                width: 290px;
+                bottom: 0;
+                padding-top: 2px;
+                position: absolute;
+                text-align: center;
+                color: white;
+                font-size: 1.5em;
+                font-weight: 500;
+                letter-spacing: 4px;
+            }
+
+            .duongngangbrand {
+                display: none;
+            }
+
+            .duongdungbrand {
+                display: none;
+            }
+
+        }
+
+
+        @media (min-width: 576px) {
+
+
+
+            .imgB {
+                height: 350px;
+                width: 448px;
+            }
+
+            .khung {
+
+                margin-top: 30px;
+                height: 350px;
+                width: 448px;
+                overflow: hidden;
+            }
+
+            .khung:hover .tenthuonghieu {
+                opacity: 0.8;
+                color: gold;
+            }
+
+            .tenthuonghieu {
+                background-color: rgba(196, 192, 192, 0.603);
+                height: 35px;
+                width: 450px;
+                bottom: 0;
+                padding-top: 2px;
+                position: absolute;
+                text-align: center;
+                color: white;
+                font-size: 1.5em;
+                font-weight: 500;
+                letter-spacing: 4px;
+            }
+
+
+        }
+
+
+        @media (min-width: 768px) {
+
+
+            .imgB {
+                height: 250px;
+                width: 228px;
+            }
+
+            .khung {
+                margin-top: 0;
+                height: 250px;
+                width: 228px;
+                overflow: hidden;
+            }
+
+            .khung:hover .tenthuonghieu {
+                opacity: 0.8;
+                color: gold;
+            }
+
+            .tenthuonghieu {
+                background-color: rgba(196, 192, 192, 0.603);
+                height: 35px;
+                width: 230px;
+                bottom: 0;
+                padding-top: 2px;
+                position: absolute;
+                text-align: center;
+                color: white;
+                font-size: 1.5em;
+                font-weight: 500;
+                letter-spacing: 4px;
+            }
+
+
+        }
+
+
+        @media (min-width: 992px) {
+            .imgB {
+                height: 250px;
+                width: 298px;
+            }
+
+            .khung {
+                height: 250px;
+                width: 298px;
+                overflow: hidden;
+            }
+
+            .khung:hover .tenthuonghieu {
+                opacity: 0.8;
+                color: gold;
+            }
+
+            .tenthuonghieu {
+                background-color: rgba(196, 192, 192, 0.603);
+                height: 65px;
+                width: 300px;
+                bottom: 0;
+                padding-top: 2px;
+                position: absolute;
+                text-align: center;
+                color: white;
+                font-size: 2.5em;
+                font-weight: 500;
+                letter-spacing: 4px;
+            }
+
+            .duongngangbrand {
+                position: absolute;
+                width: 31%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                top: 50px;
+                right: 0;
+                margin-right: 57px;
+            }
+
+            .duongdungbrand {
+                position: absolute;
+                height: 28%;
+                width: 1px;
+                border-left: 2px solid grey;
+                right: 100px;
+                top: 7px;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+
+            .imgB {
+                height: 350px;
+                width: 348px;
+            }
+
+            .khung {
+                height: 350px;
+                width: 348px;
+                overflow: hidden;
+            }
+
+            .khung:hover .tenthuonghieu {
+                opacity: 0.8;
+                color: gold;
+            }
+
+            .tenthuonghieu {
+                background-color: rgba(196, 192, 192, 0.603);
+                height: 65px;
+                width: 350px;
+                bottom: 0;
+                padding-top: 2px;
+                position: absolute;
+                text-align: center;
+                color: white;
+                font-size: 2.5em;
+                font-weight: 500;
+                letter-spacing: 4px;
+            }
+
+            .duongngangbrand {
+                position: absolute;
+                width: 31%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                top: 50px;
+                right: 0;
+                margin-right: 57px;
+            }
+
+            .duongdungbrand {
+                position: absolute;
+                height: 28%;
+                width: 1px;
+                border-left: 2px solid grey;
+                right: 100px;
+                top: 7px;
+            }
+        }
+
+        /* Colorize-zoom Container */
+        .img-hover-zoom--colorize img {
+            transition: transform .5s, filter 1.5s ease-in-out;
+
+        }
+
+        /* The Transformation */
+        .img-hover-zoom--colorize:hover img {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+    </style>
+
+    <!-- Contact css -->
+    <style>
+        @media (max-width: 576px) {
+            .textphanhoi {
+                color: rgb(231, 227, 227);
+                margin-left: 60px;
+                margin-top: 15px;
+                font-size: 18px;
+            }
+        }
+
+
+        @media (min-width: 576px) {
+            .textphanhoi {
+                color: rgb(231, 227, 227);
+                margin-left: 60px;
+                margin-top: 15px;
+                font-size: 18px;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            .textphanhoi {
+                color: rgb(231, 227, 227);
+                margin-left: 30px;
+                margin-top: 15px;
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width: 926px) {
+            .textphanhoi {
+                color: rgb(231, 227, 227);
+                margin-left: 30px;
+                margin-top: 15px;
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .textphanhoi {
+                color: rgb(231, 227, 227);
+                margin-left: 60px;
+                margin-top: 15px;
+                font-size: 18px;
+            }
+
+            .duongnganglienhe {
+                position: absolute;
+                width: 55%;
+                height: 1px;
+                border-bottom: 2px solid grey;
+                top: 40px;
+                left: 3px;
+            }
+
+            .duongdunglienhe {
+                position: absolute;
+                height: 200px;
+                width: 1px;
+                border-left: 2px solid grey;
+                left: 42px;
+                top: 0px;
+            }
+
+            .duongdunglienhe1 {
+                position: absolute;
+                height: 200px;
+                width: 1px;
+                border-left: 2px solid grey;
+                left: 47px;
+                top: 0px;
+            }
+        }
+
+
+        .bntphanhoi {
+            color: black;
+            height: 55px;
+            font-size: 20px;
+            font-weight: 500;
+            background-color: white;
+        }
+
+        .bntphanhoi:hover {
+            color: white;
+            background-color: goldenrod;
+            transition: 0.2s;
+            box-shadow: 0 0 30px gold;
+            border: 3px solid gold;
+            border-radius: 50px;
+        }
+
+
+        .inputphanhoi {
+            background-color: transparent;
+            color: rgb(231, 227, 227);
+            border-color: grey;
+        }
+
+        .inputphanhoi:focus {
+            background-color: transparent;
+            color: rgb(231, 227, 227);
+        }
+    </style>
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
+
+        <a class="navbar-brand" style="color: white;" href="./index.html">
+            <img src="./asssets/img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt=""
+                loading="lazy">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse ndnav" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link " style="color: white;" href="./index.html">HOME</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="#Introduce">INTRODUCE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="#Brands"> BRANDs</a>
+                </li>
+                <li class="nav-item  mx-4">
+                    <a class="nav-link" style="color: white;" href="#Refer">REFER</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="#Feedback">FEEDBACK</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="./asssets/pages/Lien_he.html">CONTACT US</a>
+                </li>
+            </ul>
+            <!-- item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="./asssets/pages/Lien_he.html"><i class="fa fa-map" aria-hidden="true"
+                            style="font-size: 21px;color: rgb(226, 223, 223); "></i></a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a href="./asssets/pages/login.html"><i class="fa fa-user"
+                            style="font-size: 23px;color: rgb(226, 223, 223); "></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"
+                            style="font-size: 23px;color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Head -->
+    <h1 data-aos="zoom-in" data-aos-duration="1500" class="h1">
+        RICHFIELD CHAIR</h1>
+    <div class="img-fluid">
+        <img src="./asssets/img/Background/Header.jpg">
+    </div>
+
+    <!-- Introduce -->
+    <div class="container-fluid" id="Introduce"
+        style="background-image: url(./asssets/img/Background/background-gioithieu.jpg); background-position: center; color: white;">
+
+        <div class="row" style="height: 490px;">
+
+            <div class="col-md-8" style="padding-top: 7px;" data-aos="fade-right" data-aos-duration="1500">
+                <div class="gioithieu">
+                    <span style="font-size: 26px;padding-left: 60px;">01</span>
+                    <span
+                        style=" padding-left: 45px ;font-size: 30px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: goldenrod;">INTRODUCE
+                    </span>
+                    <span class="duongnganggioithieu1"></span>
+                    <span class="wwa">WHO WE ARE</span>
+                    <span class="duongdunggioithieu "></span>
+                    <span class="duongnganggioithieu2"></span>
+
+                    <!-- Nội dung giới thiệu -->
+                    <div class="textgioithieu" data-aos="flip-down" data-aos-duration="1500">
+                        The RichFieldChair website is designed to introduce products to customers about the
+                        best-selling chairs, new chairs, which can be placed in many different positions and spaces
+                        to
+                        help customers have the most comfortable seat. The website has many different types of
+                        chairs
+                        like an armchair, leather chairs, swivel chairs, recliner chairs, small-space chairs… At the
+                        same time, the website also brings attractive and clear images to help customers easily
+                        view,
+                        refer to, compare the price and quality of each type of chair on the market.
+                    </div>
+
+                    <!-- Counter -->
+                    <div>
+                        <div class="counter1">
+                            <h2 class="timer count-title count-number" data-to="1905" data-speed="1500"></h2>
+                            <p class="count-text">Our Customer</p>
+                        </div>
+                        <div class="counter2">
+                            <h2 class="timer count-title count-number" data-to="20001" data-speed="1500"></h2>
+                            <p class="count-text">Products Sold</p>
+                        </div>
+                        <div class="counter3">
+                            <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
+                            <p class="count-text">Happy Clients</p>
+                        </div>
+                    </div>
+
+                    <a href="./asssets/pages/Gioithieu.html"><button class="bntgioithieu">LET'S GET
+                            STARTED</button></a>
+                </div>
+            </div>
+
+            <div class="col-md-4 my-3 d-none d-lg-block" data-aos="fade-up" data-aos-duration="1500">
+                <img style=" height: 450px;" src="./asssets/img/Introduce/gioithieu.jpg" alt="">
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Brands -->
+    <div style="background-color: rgb(53, 51, 51);position: relative;" id="Brands">
+
+        <div>
+            <div
+                style="padding-right: 140px;padding-top: 7px;text-align: right;font-size: 30px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: goldenrod; ">
+                BRANDs
+            </div>
+            <div style="font-size: 26px; text-align: right; color: white; margin-top: -43px;margin-right: 60px;">02
+            </div>
+            <span class="duongngangbrand"></span>
+            <span class="duongdungbrand"></span>
+
+        </div>
+
+        <!-- Nội dung phần thương hiệu -->
+        <div class="container">
+
+            <div class="row my-4">
+
+                <div class="col-md-4 " data-aos="fade-down" data-aos-duration="1500">
+                    <div class="card khung">
+                        <a href="./asssets/pages/IKEA/IKEA.html" class="img-hover-zoom--colorize">
+                            <img class="imgB" src="./asssets/img/IKEA/background.jpg" alt="IKEA">
+                        </a>
+                        <div class="tenthuonghieu">IKEA</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 " data-aos="fade-down" data-aos-duration="2000">
+                    <div class="card khung">
+                        <a href="./asssets/pages/Bo Concept/BO Concept.html" class="img-hover-zoom--colorize">
+                            <img class="imgB" src="./asssets/img/Bo/BO Concept.jpg" alt="Bo">
+                        </a>
+                        <div class="tenthuonghieu" style="letter-spacing: 0em;">BO Concept</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 " data-aos="fade-down" data-aos-duration="3000">
+                    <div class="card khung">
+                        <a href="./asssets/pages/SB/SB.html" class="img-hover-zoom--colorize">
+                            <img class="imgB" src="./asssets/img/SB/SB Furniture.jpg" alt="SB Furniture">
+                        </a>
+                        <div class="tenthuonghieu" style="letter-spacing: 0em;">SB Furniture</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="card khung">
+                        <a href="./asssets/pages/ASHLEY/ASHLEY.html" class="img-hover-zoom--colorize">
+                            <img class="imgB" src="./asssets/img/ASHLEY/Ashley.jpg" alt="Ashley">
+                        </a>
+                        <div class="tenthuonghieu">ASHLEY</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="card khung">
+                        <a href="./asssets/pages/AARON/AARON.html" class="img-hover-zoom--colorize">
+                            <img class="imgB" src="./asssets/img/AARON/AARON.jpg" alt="Aaron">
+                        </a>
+                        <div class="tenthuonghieu">AARON</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2500">
+                    <div class="card khung">
+                        <a href="./asssets/pages/DUNELM/DUNELM.html" class="img-hover-zoom--colorize">
+                            <img class="imgB" src="./asssets/img/Dunelm/Dunelm.jpg" alt="Dunelm">
+                        </a>
+                        <div class="tenthuonghieu">DUNELM</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div style="background-color: rgb(53, 51, 51);height: 40px;"></div>
+
+
+    <!-- Refer -->
+    <div id="Refer" class="container-fluid"
+        style="background-image: url(./asssets/img/Background/background-thamkhao.png); background-position: center;">
+
+        <div>
+            <div class="thamkhao">
+                <span style="font-size: 26px;padding-left: 60px;color: white;">03</span>
+                <span
+                    style=" padding-left: 45px ;font-size: 30px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: goldenrod;">REFER
+                </span>
+                <span class="duongngangthamkhao"></span>
+                <span class="duongdungthamkhao"></span>
+            </div>
+        </div>
+
+        <br>
+        <!-- Nội dung tham khảo -->
+        <section class=" autoplay slider" data-aos="fade-up" data-aos-duration="1000">
+            <div class="thaokham">
+                <img class="imgTK" src="./asssets/img/KITCHEN/TK-bep.jpg">
+                <div class="textthamkhao">
+                    SOME NOTES FOR DESIGNING A BEAUTIFUL KITCHEN AND SUCKING</div>
+                <a href="./asssets/pages/KITCHEN.html"><button type="button" class="bntthamkhao">MORE</button></a>
+            </div>
+            <div class="thaokham">
+                <img class="imgTK" src="./asssets/img/LIVING/TK-living.png">
+                <div class="textthamkhao">
+                    SOME TIPS USING SPACE-SPACE FURNITURE</div>
+                <a href="./asssets/pages/LIVING.html"><button type="button" class="bntthamkhao"> MORE</button></a>
+            </div>
+            <div class="thaokham">
+                <img class="imgTK" src="./asssets/img/CLASSROOM/TK-phonghoc.jpg">
+                <div class="textthamkhao">
+                    CLASSROOM DESIGN CREATES AN EMOTION OF DESIRE TO LEARN</div>
+                <a href="./asssets/pages/CLASSROOM.html"><button type="button" class="bntthamkhao">MORE</button></a>
+            </div>
+            <div class="thaokham mb-4">
+                <img class="imgTK" src="./asssets/img/WORK/TK-phongwork.jpg">
+                <div class="textthamkhao">
+                    SMART WORKING ROOM DESIGN</div>
+                <a href="./asssets/pages/WORK.html"><button type="button" class="bntthamkhao">MORE</button></a>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <!-- Contact -->
+    <div
+        style="background-image: url(./asssets/img/Background/background-lienhe.png);position: relative; background-position: center;">
+
+        <div>
+            <div
+                style="padding-right: 140px;padding-top: 7px;text-align: right;font-size: 30px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: goldenrod; ">
+                CONTACT
+            </div>
+            <div style="font-size: 26px; text-align: right; color: white; margin-top: -43px;margin-right: 60px;">04
+            </div>
+            <span class="duongngangbrand"></span>
+            <span class="duongdungbrand"></span>
+
+        </div>
+        <br><br><br>
+
+        <!-- Nội dung liên hệ -->
+        <div class="container" id="Feedback">
+
+            <!-- Liên hệ -->
+            <div class="row">
+
+                <div class="col-md-4 my-3 " data-aos="fade-right" data-aos-duration="1500">
+                    <i style="color: goldenrod; font-size: 25px;" class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span style="color: white;font-size: 25px; margin-left: 60px; ">Address</span>
+                    <span class="duongdunglienhe"></span>
+                    <span class="duongnganglienhe"></span>
+                    <div class="textphanhoi">
+                        No.1 - Ly Tu Trong Street - Ninh Kieu Ward - Cantho City<br><br>
+                        Zone.2 - 3/2 Street - Xuan Khanh Ward - Cantho City
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-3" data-aos="fade-right" data-aos-duration="2000">
+                    <i style="color: goldenrod; font-size: 25px;" class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <span style="color: white;font-size: 25px; margin-left: 60px; ">Email</span>
+                    <span class="duongdunglienhe1"></span>
+                    <span class="duongnganglienhe"></span>
+                    <div class="textphanhoi" style="line-height: 40px;">
+                        tmtria19042@cusc.ctu.edu.vn<br>
+                        nntruonga19041@cusc.ctu.edu.vn<br>
+                        lctbinha19077@cusc.ctu.edu.vn<br>
+                        hvkhaia19086@cusc.ctu.edu.vn
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-3" data-aos="fade-right" data-aos-duration="2500">
+                    <i style="color: goldenrod; font-size: 25px;" class="fa fa-volume-control-phone"
+                        aria-hidden="true"></i>
+                    <span style="color: white;font-size: 25px; margin-left: 60px; ">Phone</span>
+                    <span class="duongdunglienhe"></span>
+                    <span class="duongnganglienhe"></span>
+                    <div class="textphanhoi" style="line-height: 40px;">
+                        0932561455 (HotLine) <br>
+                        0947492641 (ColdLine)<br>
+                        0329160517 (24/7)<br>
+                        0938441905 (Support)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phản hồi -->
+            <div class="row mt-5" data-aos="fade-down" data-aos-duration="1500">
+
+                <div class="col-md-12">
+
+                    <h1
+                        style="color: goldenrod; text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        FEEDBACK
+                    </h1>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <form style="text-align: center;">
+                                <div class="form-row">
+                                    <!-- cột 1 -->
+                                    <div class="col-md-6 mb-3">
+
+                                        <!-- name -->
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text inputphanhoi"><i class="fa fa-user"
+                                                        aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" style="height: 60px;" class="form-control inputphanhoi"
+                                                id="Name" required placeholder="Your Name*">
+                                        </div>
+
+                                        <!-- email -->
+                                        <div class="input-group mb-3 my-4">
+                                            <input type="text" style="height: 60px;" class="form-control inputphanhoi"
+                                                id="Email" required placeholder="Your Email*">
+                                            <div class="input-group-append ">
+                                                <span class="input-group-text inputphanhoi">@gmail.com</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- phone -->
+                                        <div class="input-group mb-3 ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text inputphanhoi"><i class="fa fa-phone"
+                                                        aria-hidden="true"></i></span>
+                                            </div>
+                                            <input type="tel" class="form-control inputphanhoi" style="height: 60px;"
+                                                id="Phone" pattern="[0-9]{10,12}" required placeholder="Your Phone*">
+                                        </div>
+
+                                    </div>
+
+                                    <!-- cột 2 -->
+                                    <div class="col-md-6 mb-3">
+                                        <textarea class="form-control inputphanhoi" id="Text" required
+                                            placeholder="Your Message*" style="height: 230px;"></textarea>
+                                    </div>
+
+                                </div>
+
+                                <button class="btn btn-primary mb-3 bntphanhoi" type="submit">
+                                    <h3>SEND MESSAGE</h3>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;" data-aos="zoom-in-up" data-aos-duration="1000">
+        <div class="container" style="padding-top: 30px;">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+                    <div>
+                        <h3>Brands</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./asssets/pages/IKEA/IKEA.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+                            <a href="./asssets/pages/AARON/AARON.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+                            <a href="./asssets/pages/ASHLEY/ASHLEY.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+                            <a href="./asssets/pages/DUNELM/DUNELM.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+                            <a href="./asssets/pages/BO Concept/BO Concept.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+                            <a href="./asssets/pages/SB/SB.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Refer</h3>
+                        <ul style="line-height: 40px; list-style: none; margin-left: -40px; letter-spacing: 1px;">
+                            <a href="./asssets/pages/KITCHEN.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+                            <a href="./asssets/pages/LIVING.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+                            <a href="./asssets/pages/WORK.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+                            <a href="./asssets/pages/CLASSROOM.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>About</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./asssets/pages/Gioithieu.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+                            <a href="./asssets/pages/Lien_he.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/it.png"
+                                    width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a>
+                        </div>
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Liên kết Jquery -->
+    <script src="./vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Liên kết AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Liên kết Slick -->
+    <script type="text/javascript" src="./vendor/slick-1.8.1/slick/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./vendor/slick-1.8.1/slick/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./vendor/slick-1.8.1/slick/slick.min.js"></script>
+
+
+    <!-- Slick -->
+    <script type="text/javascript">
+
+        $('.autoplay').slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            centerMode: true,
+            variableWidth: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: false,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+
+        });
+
+    </script>
+
+
+    <!-- Sticky -->
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+        var height = $('#startcount').outerHeight();
+        function scrollFunction() {
+
+            if (document.body.scrollTop >= height || document.documentElement.scrollTop >= height) {
+                // start all the timers
+                $('.timer').each(count);
+
+                function count(options) {
+                    var $this = $(this);
+                    options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+                    $this.countTo(options);
+                }
+            }
+
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "14px";
+                document.getElementById("header").style.background = "gray";
+                document.getElementById("header").style.height = "65px";
+                document.getElementById("header").style.padding = "10px";
+                document.getElementById("logo").style.height = "50px";
+                document.getElementById("logo").style.width = "100px";
+
+            } else {
+                document.getElementById("header").style.fontSize = "17px";
+                document.getElementById("header").style.background = "";
+                document.getElementById("header").style.padding = "45px";
+                document.getElementById("logo").style.width = "140px";
+                document.getElementById("logo").style.height = "85px";
+            }
+        }
+    </script>
+
+
+    <!-- Counter -->
+    <script>
+        (function ($) {
+            $.fn.countTo = function (options) {
+                options = options || {};
+
+                return $(this).each(function () {
+                    // set options for current element
+                    var settings = $.extend({}, $.fn.countTo.defaults, {
+                        from: $(this).data('from'),
+                        to: $(this).data('to'),
+                        speed: $(this).data('speed'),
+                        refreshInterval: $(this).data('refresh-interval'),
+                        decimals: $(this).data('decimals')
+                    }, options);
+
+                    // how many times to update the value, and how much to increment the value on each update
+                    var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                        increment = (settings.to - settings.from) / loops;
+
+                    // references & variables that will change with each update
+                    var self = this,
+                        $self = $(this),
+                        loopCount = 0,
+                        value = settings.from,
+                        data = $self.data('countTo') || {};
+
+                    $self.data('countTo', data);
+
+                    // if an existing interval can be found, clear it first
+                    if (data.interval) {
+                        clearInterval(data.interval);
+                    }
+                    data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+                    // initialize the element with the starting value
+                    render(value);
+
+                    function updateTimer() {
+                        value += increment;
+                        loopCount++;
+
+                        render(value);
+
+                        if (typeof (settings.onUpdate) == 'function') {
+                            settings.onUpdate.call(self, value);
+                        }
+
+                        if (loopCount >= loops) {
+                            // remove the interval
+                            $self.removeData('countTo');
+                            clearInterval(data.interval);
+                            value = settings.to;
+
+                            if (typeof (settings.onComplete) == 'function') {
+                                settings.onComplete.call(self, value);
+                            }
+                        }
+                    }
+
+                    function render(value) {
+                        var formattedValue = settings.formatter.call(self, value, settings);
+                        $self.html(formattedValue);
+                    }
+                });
+            };
+
+            $.fn.countTo.defaults = {
+                from: 0,               // the number the element should start at
+                to: 0,                 // the number the element should end at
+                speed: 1000,           // how long it should take to count between the target numbers
+                refreshInterval: 100,  // how often the element should be updated
+                decimals: 0,           // the number of decimal places to show
+                formatter: formatter,  // handler for formatting the value before rendering
+                onUpdate: null,        // callback method for every time the element is updated
+                onComplete: null       // callback method for when the element finishes updating
+            };
+
+            function formatter(value, settings) {
+                return value.toFixed(settings.decimals);
+            }
+        }(jQuery));
+
+        jQuery(function ($) {
+            // custom formatting example
+            $('.count-number').data('countToOptions', {
+                formatter: function (value, options) {
+                    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+                }
+            });
+
+        });
+    </script>
+
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIVINGROOM</title>
+    <link rel="icon" type="image/x-icon" href="../img/icon.png" type="text/css">
+
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Header css -->
+    <style>
+        @media (max-width: 576px) {
+
+            #logo {
+                width: 50px;
+                height: 55px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 400px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 10%;
+                padding-top: 35%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+        @media (min-width: 576px) {
+            #logo {
+                width: 70px;
+                height: 65px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 450px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 5%;
+                padding-top: 25%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            #logo {
+                width: 90px;
+                height: 85px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 10%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 65px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 550px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 0%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 6    0px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 600px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 8%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 60px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+        }
+    </style>
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
+
+        <a class="navbar-brand" style="color: white;" href="../../index.html">
+            <img src="../img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt="" loading="lazy">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="../../index.html">HOME</a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="../pages/Gioithieu.html">INTRODUCE</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BRANDs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./IKEA/IKEA.html">IKAE</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./BO Concept/BO Concept.html">BO Concept</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./ASHLEY/ASHLEY.html">ASHLEY</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./AARON/AARON.html">AARON</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./DUNELM/DUNELM.html">DUNELM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./SB/SB.html">SB Furniture</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown mx-4">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REFER
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="./LIVING.html">DESIGN LIVINGROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./CLASSROOM.html">DESIGN CLASSROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./WORK.html">DESIGN WORKROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./KITCHEN.html">DESIGN KITCHEN</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="../pages/Lien_he.html">CONTACT US</a>
+                </li>
+
+            </ul>
+            <!-- item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../pages/Lien_he.html"><i class="fa fa-map" aria-hidden="true"
+                            style="font-size: 21px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a href="../pages/login.html"><i class="fa fa-user"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Head -->
+    <h1 data-aos="zoom-in" data-aos-duration="1500" class="h1">
+        SOME TIPS USING SPACE-SPACE FURNITURE</h1>
+    <div class="img-fluid">
+        <img src="../img/LIVING/TK-living.png" alt="">
+    </div>
+
+    <!-- Nội dung -->
+    <div class="container my-4 ">
+
+        <div class="row">
+
+            <!-- Nội dung -->
+            <div class="col-md-9 mt-5" style="font-style: italic;">
+
+                <h1 style="font-style: normal;">6 Essential Living Room Decorating Tips to Follow</h1>
+                <br>
+                Between entertaining and Netflix-binging, you undoubtedly spend a lot of time in your living room,
+                and it is easily the most important room in your home when it comes to decor. A living room is often
+                the first room we decorate and the first room we show new guests during a tour. A beautifully
+                decorated living room both draws you in and compels you to stay. But because of the high stakes,
+                making those big design choices can be a stressful proposition.
+                <br>
+                Though there are a few fairly obvious basics (a living room should have chairs, entertainment, and
+                provide comfort), several key steps can help you achieve a truly dreamy living space. Whether you
+                are starting from scratch or you are ready for a living room makeover, these essential decor tips
+                will guide you as you design and create a living room that is both beautiful and functional.
+                <br><br>
+                <img style="width: 100%;" src="../img/LIVING/1.jpg" alt="">
+                <div class="text-center">
+                    Living room demands high aesthetics and comfort
+                </div>
+                <br>
+                <h3>Select the Right Furniture</h3>
+                Whether you are starting from scratch or updating a space you have lived in for years, it is important
+                to take stock of what furniture you own and be brutally honest about whether it works for your space.
+                Redecorating your living room is a great opportunity to figure out what is important to you. For
+                example, if a gorgeous sectional like this one from Emily Henderson is a must-have, the key is to find a
+                sectional that is a natural fit for the room (and yes, even small rooms can rock sectionals).
+
+                If you have been holding onto a decades-old loveseat or a recliner that is not working anymore, it is
+                time to let go and start fresh. The right furniture, both in size and style, can make or break a living
+                room.
+                <img style="width: 100%;" src="../img/LIVING/2.jpg" alt="">
+                <div class="text-center mb-4">
+                    The items displayed in the living room must be luxurious and stylish
+                </div>
+                <h3>Designate a Focal Point</h3>
+                Your room's focal point is where people's eyes will fall when they first walk into your room. If you do
+                not have a natural focal point like a large fireplace or mantle, create one with an oversized mirror, a
+                piano or extra large artwork, as seen in this stunning room from Studio McGee.
+                <br>
+                Once you have decided upon your focal point, decorate the room around it for a cohesive feel. Just be
+                sure to pay attention to the vibe your focal point is giving off. If you have a beautiful fireplace, for
+                example, a quick makeover can change the entire look of your living space and add a fresh, updated feel.
+                <br><br>
+                <img style="width: 100%;" src="../img/LIVING/3.jpg" alt="">
+                <div class="text-center mb-4">
+                    The kitchen and living room or living room together will make the kitchen more airy as well as
+                    create a warmth
+                </div>
+                <h3>Pick Your Color Palette</h3>
+                Whether you are into a monochromatic style or you want to tie in a few complementary colors, your color
+                scheme is a key feature to cultivating a seamless living room aesthetic. This eye-catching living room
+                from by nest_twenty_eight starts with a base of white and black and adds a hint of mustard yellow and
+                neutral birch to keep the look harmonious. Having a color palette in mind as you put together each piece
+                of your living room is an easy way to keep your look clean and purposeful.
+                <br><br>
+                <img style="width: 100%; height: 500px" src="../img/LIVING/4.webp" alt="">
+                <div class="text-center mb-4">
+                    Choose the right color, the living room will be beautiful
+                </div>
+                <h3> Balance Function and Beauty</h3>
+                This living room from My Scandinavian Home is equal parts beautiful and functional, which is essential
+                to creating a gorgeous living room. It's okay to want a dazzling space, but you also have to live in
+                it—and it is important to ensure your room works not only for your tastes but also for your lifestyle.
+                <br>
+                If you need additional storage, look for attractive pieces that conceal your knickknacks while blending
+                well with your other decor. Likewise, an ultra-stylish couch may catch the eye, but what good is it if
+                it is not comfortable? The most important element of a wonderfully designed living room is that it is a
+                place you will actually want to hang out in.
+                <br><br>
+                <img style="width: 100%; height: 500px" src="../img/LIVING/5.webp" alt="">
+                <div class="text-center mb-4">
+                    Balance keeps comfort and convenience
+                </div>
+                <h3>Pay Attention to Lighting</h3>
+                Getting your living room lighting just right can be a challenge, but it can also pull the whole look
+                together. We suggest a combination of various sorts of lighting, as seen in this space from Decorholic.
+                It includes overhead (though a living space with an abundance of natural light may not need this),
+                accent, and task lighting, which helps you read that latest thriller.
+                <br>
+                Once you have decided what you need, you can then focus on finding light sources that blend with your
+                decor scheme.
+                <br><br>
+                <img style="width: 100%; height: 500px" src="../img/LIVING/6.webp" alt="">
+                <div class="text-center mb-4">
+                    The lights in the living room should be gorgeous
+                </div>
+                <h3>Avoid a Showroom Feel</h3>
+                It is easy to rush to a big box store to decorate your living room, and there is nothing wrong with
+                that. But for the ultimate wow effect (and to avoid your living space mimicking a showroom), it is
+                important to avoid buying every piece from the same store. This gorgeously modern room from Marion WD
+                weaves in both personality and beauty. Each piece, especially throughout the gallery wall, feels
+                specifically selected for the space. It may take a little extra time to curate each piece from different
+                sources, but the end result will feel much more unique and purposeful.
+            </div>
+
+            <!-- Những bài tham khảo -->
+            <div class="col-md-3">
+                <div class="list-group" style="position: sticky; top: 70px;">
+                    <li class="list-group-item list-group-item-dark"><span
+                            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">REFER</span>
+                    </li>
+                    <a href="./KITCHEN.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">KITCHEN</button></a>
+                    <a href="./WORK.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">WORKROOM</button></a>
+                    <a href="./CLASSROOM.html"><button type="button" style="font-size: 18px;font-weight: 500;"
+                            class="list-group-item list-group-item-action">CLASSROOM</button></a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container" style="padding-top: 30px;">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+                    <div>
+                        <h3>Brands</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./IKEA/IKEA.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+                            <a href="./AARON/AARON.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+                            <a href="./ASHLEY/ASHLEY.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+                            <a href="./DUNELM/DUNELM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+                            <a href="./BO Concept/BO Concept.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+                            <a href="./SB/SB.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Refer</h3>
+                        <ul style="line-height: 40px; list-style: none; margin-left: -40px; letter-spacing: 1px;">
+                            <a href="./KITCHEN.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+                            <a href="./LIVING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+                            <a href="./WORK.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+                            <a href="./CLASSROOM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>About</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="./Gioithieu.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+                            <a href="./Lien_he.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a> <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/it.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a></div>
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liên kết Jquery -->
+    <script src="../../vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Liên kết AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Sticky -->
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "14px";
+                document.getElementById("header").style.background = "gray";
+                document.getElementById("header").style.height = "65px";
+                document.getElementById("header").style.padding = "10px";
+                document.getElementById("logo").style.height = "50px";
+                document.getElementById("logo").style.width = "100px";
+
+            } else {
+                document.getElementById("header").style.fontSize = "17px";
+                document.getElementById("header").style.background = "";
+                document.getElementById("header").style.padding = "45px";
+                document.getElementById("logo").style.width = "140px";
+                document.getElementById("logo").style.height = "85px";
+            }
+        }
+    </script>
+</body>
+
+
+</html>

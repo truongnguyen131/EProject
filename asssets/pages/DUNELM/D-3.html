@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-1</title>
+    <link rel="icon" type="image/x-icon" href="../../img/icon.png" type="text/css">
+
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="../../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="../../../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Header css -->
+    <style>
+        #header {
+            padding-right: 44px;
+            padding-left: 47px;
+            padding-top: 5px;
+            color: black;
+            font-size: 17px;
+            position: fixed;
+            top: 0;
+            transition: 0.6s;
+        }
+
+        #logo {
+            width: 140px;
+            height: 85px;
+        }
+    </style>
+
+    <!-- Glass img css -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .img-magnifier-container {
+            position: relative;
+        }
+
+        .img-magnifier-glass:hover {
+            opacity: 1;
+        }
+
+        .img-magnifier-glass {
+            opacity: 0;
+            position: absolute;
+            border: 3px solid #000;
+            border-radius: 50%;
+            cursor: none;
+            /*Set the size of the magnifier glass:*/
+            width: 130px;
+            height: 130px;
+        }
+
+        .hinh1 {
+            margin-top: 30px;
+            background-color: grey;
+            height: 70px;
+            width: 70px;
+            border: black solid 2px;
+        }
+    </style>
+
+    <!-- Glass img js -->
+    <script>
+        function magnify(imgID, zoom) {
+            var img, glass, w, h, bw;
+            img = document.getElementById(imgID);
+            /*create magnifier glass:*/
+            glass = document.createElement("DIV");
+            glass.setAttribute("class", "img-magnifier-glass");
+            /*insert magnifier glass:*/
+            img.parentElement.insertBefore(glass, img);
+            /*set background properties for the magnifier glass:*/
+            glass.style.backgroundImage = "url('" + img.src + "')";
+            glass.style.backgroundRepeat = "no-repeat";
+            glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+            bw = 3;
+            w = glass.offsetWidth / 2;
+            h = glass.offsetHeight / 2;
+            /*execute a function when someone moves the magnifier glass over the image:*/
+            glass.addEventListener("mousemove", moveMagnifier);
+            img.addEventListener("mousemove", moveMagnifier);
+            /*and also for touch screens:*/
+            glass.addEventListener("touchmove", moveMagnifier);
+            img.addEventListener("touchmove", moveMagnifier);
+            function moveMagnifier(e) {
+                var pos, x, y;
+                /*prevent any other actions that may occur when moving over the image*/
+                e.preventDefault();
+                /*get the cursor's x and y positions:*/
+                pos = getCursorPos(e);
+                x = pos.x;
+                y = pos.y;
+                /*prevent the magnifier glass from being positioned outside the image:*/
+                if (x > img.width - (w / zoom)) { x = img.width - (w / zoom); }
+                if (x < w / zoom) { x = w / zoom; }
+                if (y > img.height - (h / zoom)) { y = img.height - (h / zoom); }
+                if (y < h / zoom) { y = h / zoom; }
+                /*set the position of the magnifier glass:*/
+                glass.style.left = (x - w) + "px";
+                glass.style.top = (y - h) + "px";
+                /*display what the magnifier glass "sees":*/
+                glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+            }
+            function getCursorPos(e) {
+                var a, x = 0, y = 0;
+                e = e || window.event;
+                /*get the x and y positions of the image:*/
+                a = img.getBoundingClientRect();
+                /*calculate the cursor's x and y coordinates, relative to the image:*/
+                x = e.pageX - a.left;
+                y = e.pageY - a.top;
+                /*consider any page scrolling:*/
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return { x: x, y: y };
+            }
+        }
+    </script>
+
+    <!-- Mô tả + Đánh giá css -->
+    <style>
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            color: goldenrod;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 25px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            color: goldenrod;
+            background-color: rgba(255, 166, 0, 0.418);
+            border-bottom: solid gold;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .tabcontent1 {
+            display: block;
+            padding: 6px 12px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-top: none;
+            color: grey;
+            font-size: 20px;
+            line-height: 40px;
+            padding-left: 30px;
+        }
+
+        .range {
+            position: absolute;
+            height: 20px;
+            width: 200px;
+            background-color: rgb(240, 234, 234);
+        }
+
+        .khung {
+            position: relative;
+            height: 250px;
+            width: 250px;
+            overflow: hidden;
+        }
+
+
+        .khung:hover .textsosanh {
+            transition: 1s;
+            opacity: 1;
+        }
+
+        .textsosanh {
+
+            position: absolute;
+            top: 0;
+            color: blue;
+            font-weight: 500;
+            opacity: 0;
+        }
+
+        /* Colorize-zoom Container */
+        .img-hover-zoom--colorize img {
+            transition: transform .5s, filter 1.5s ease-in-out;
+
+        }
+
+        /* The Transformation */
+        .img-hover-zoom--colorize:hover img {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+    </style>
+
+    <!-- Range star css -->
+    <style>
+        .rating {
+            --active: #FFED76;
+            --active-pale: rgba(255, 237, 118, .36);
+            --inactive: rgb(221, 219, 219);
+            --face-active: #121621;
+            --face-inactive: #1C212E;
+            display: -webkit-box;
+            display: flex;
+            position: relative;
+        }
+
+        @media (min-width: 600px) {
+            .rating {
+                zoom: 2;
+            }
+        }
+
+        .rating ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: -webkit-box;
+            display: flex;
+            color: var(--inactive);
+        }
+
+        .rating ul li {
+            --face: var(--face-inactive);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .rating ul li:before,
+        .rating ul li:after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+        }
+
+        .rating ul li:before {
+            --r: 0deg;
+            width: 2px;
+            height: 2px;
+            border-radius: 1px;
+            top: 15px;
+            left: 10px;
+            -webkit-transform: rotate(var(--r));
+            transform: rotate(var(--r));
+            -webkit-filter: drop-shadow(8px 0 0 var(--face));
+            filter: drop-shadow(8px 0 0 var(--face));
+        }
+
+        .rating ul li span {
+            width: 2px;
+            height: 2px;
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            margin: -1px 0 0 -1px;
+            -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+            opacity: 0;
+            box-shadow: 16px -16px 0 var(--active-pale), -16px -16px 0 var(--active-pale), -21px 8px 0 var(--active-pale), 21px 8px 0 var(--active-pale), 0 22px 0 var(--active-pale);
+        }
+
+        .rating ul li:nth-child(1):after {
+            width: 10px;
+            height: 10px;
+            top: 20px;
+            left: 10px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            border-top-color: var(--face);
+        }
+
+        .rating ul li:nth-child(3):after {
+            width: 6px;
+            left: 12px;
+            top: 20px;
+            height: 1px;
+            background: var(--face);
+        }
+
+        .rating ul li:nth-child(4):after {
+            width: 10px;
+            height: 10px;
+            top: 12px;
+            left: 10px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            border-bottom-color: var(--face);
+        }
+
+        .rating ul li:nth-child(4).current {
+            -webkit-animation: active-4 .4s ease;
+            animation: active-4 .4s ease;
+        }
+
+        .rating ul li:nth-child(4).current span {
+            -webkit-animation: active-span .32s ease;
+            animation: active-span .32s ease;
+        }
+
+        .rating ul li:nth-child(5):after {
+            width: 6px;
+            height: 3px;
+            left: 12px;
+            top: 20px;
+            border-radius: 0 0 3px 3px;
+            background: var(--face);
+        }
+
+        .rating ul li:nth-child(5).current {
+            -webkit-animation: active-5 .72s ease;
+            animation: active-5 .72s ease;
+        }
+
+        .rating ul li:nth-child(5).current span {
+            -webkit-animation: active-span .32s ease;
+            animation: active-span .32s ease;
+        }
+
+        .rating ul li.current {
+            --face: var(--face-active);
+        }
+
+        .rating ul li.current svg {
+            color: var(--active);
+            fill: white;
+        }
+
+        .rating ul li:not(.current) svg {
+            -webkit-transition: -webkit-transform .2s ease;
+            transition: -webkit-transform .2s ease;
+            transition: transform .2s ease;
+            transition: transform .2s ease, -webkit-transform .2s ease;
+        }
+
+        .rating ul li:not(.current):active svg {
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+
+        .rating ul li:not(:last-child) {
+            margin: 0 16px 0 0;
+        }
+
+        .rating ul li:not(:last-child):before {
+            background: var(--face);
+        }
+
+        .rating ul li:not(:last-child).current:before {
+            -webkit-animation: blink 3s linear infinite;
+            animation: blink 3s linear infinite;
+        }
+
+        .rating ul li:last-child:before {
+            --r: -45deg;
+            width: 3px;
+            height: 3px;
+            border-top: 1px solid var(--face);
+            border-right: 1px solid var(--face);
+            border-radius: 0 1px 0 0;
+            left: 12px;
+            -webkit-filter: drop-shadow(6px 6px 0 var(--face));
+            filter: drop-shadow(6px 6px 0 var(--face));
+        }
+
+        .rating svg {
+            width: 30px;
+            height: 30px;
+            display: block;
+            fill: white;
+        }
+
+        .rating>div {
+            left: 0;
+            top: 0;
+            position: absolute;
+            display: none;
+            -webkit-transform: translateX(var(--x));
+            transform: translateX(var(--x));
+            -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.265, 1.1) 0.24s;
+            transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.265, 1.1) 0.24s;
+            transition: transform 0.3s cubic-bezier(0, 0, 0.265, 1.1) 0.24s;
+            transition: transform 0.3s cubic-bezier(0, 0, 0.265, 1.1) 0.24s, -webkit-transform 0.3s cubic-bezier(0, 0, 0.265, 1.1) 0.24s;
+        }
+
+        .rating>div span {
+            display: block;
+        }
+
+        .rating>div span svg {
+            color: var(--active);
+            fill: white;
+        }
+
+        .rating.animate-left>div,
+        .rating.animate-right>div {
+            display: block;
+        }
+
+        .rating.animate-left>div span,
+        .rating.animate-right>div span {
+            -webkit-animation: scale .28s linear .24s;
+            animation: scale .28s linear .24s;
+        }
+
+        .rating.animate-left li.move-to:before {
+            -webkit-animation: move-to-left .31s ease .36s;
+            animation: move-to-left .31s ease .36s;
+        }
+
+        .rating.animate-left li.move-from:before {
+            -webkit-animation: move-to-right .28s ease;
+            animation: move-to-right .28s ease;
+        }
+
+        .rating.animate-left>div {
+            -webkit-animation: double-left .32s linear .24s;
+            animation: double-left .32s linear .24s;
+        }
+
+        .rating.animate-left>div span svg {
+            -webkit-animation: left .3s ease, right-end .4s ease .4s;
+            animation: left .3s ease, right-end .4s ease .4s;
+        }
+
+        .rating.animate-right li.move-to:before {
+            -webkit-animation: move-to-right .31s ease .36s;
+            animation: move-to-right .31s ease .36s;
+        }
+
+        .rating.animate-right li.move-from:before {
+            -webkit-animation: move-to-left .28s ease;
+            animation: move-to-left .28s ease;
+        }
+
+        .rating.animate-right>div {
+            -webkit-animation: double-right .32s linear .24s;
+            animation: double-right .32s linear .24s;
+        }
+
+        .rating.animate-right>div span svg {
+            -webkit-animation: right .3s ease, left-end .4s ease .4s;
+            animation: right .3s ease, left-end .4s ease .4s;
+        }
+
+        @-webkit-keyframes active-4 {
+            40% {
+                -webkit-transform: scale(1.25);
+                transform: scale(1.25);
+            }
+        }
+
+        @keyframes active-4 {
+            40% {
+                -webkit-transform: scale(1.25);
+                transform: scale(1.25);
+            }
+        }
+
+        @-webkit-keyframes active-span {
+            60% {
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: scale(1.16);
+                transform: scale(1.16);
+                opacity: 0;
+            }
+        }
+
+        @keyframes active-span {
+            60% {
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: scale(1.16);
+                transform: scale(1.16);
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes active-5 {
+            15% {
+                -webkit-transform: rotate(180deg) scale(1.1);
+                transform: rotate(180deg) scale(1.1);
+            }
+
+            30% {
+                -webkit-transform: rotate(360deg) scale(1.2);
+                transform: rotate(360deg) scale(1.2);
+            }
+
+            70% {
+                -webkit-transform: rotate(360deg) translateY(14%) scaleY(0.72);
+                transform: rotate(360deg) translateY(14%) scaleY(0.72);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes active-5 {
+            15% {
+                -webkit-transform: rotate(180deg) scale(1.1);
+                transform: rotate(180deg) scale(1.1);
+            }
+
+            30% {
+                -webkit-transform: rotate(360deg) scale(1.2);
+                transform: rotate(360deg) scale(1.2);
+            }
+
+            70% {
+                -webkit-transform: rotate(360deg) translateY(14%) scaleY(0.72);
+                transform: rotate(360deg) translateY(14%) scaleY(0.72);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes double-right {
+            60% {
+                -webkit-filter: drop-shadow(-5px 0 1px var(--active-pale)) drop-shadow(4px 0 1px var(--active-pale));
+                filter: drop-shadow(-5px 0 1px var(--active-pale)) drop-shadow(4px 0 1px var(--active-pale));
+            }
+        }
+
+        @keyframes double-right {
+            60% {
+                -webkit-filter: drop-shadow(-5px 0 1px var(--active-pale)) drop-shadow(4px 0 1px var(--active-pale));
+                filter: drop-shadow(-5px 0 1px var(--active-pale)) drop-shadow(4px 0 1px var(--active-pale));
+            }
+        }
+
+        @-webkit-keyframes scale {
+            60% {
+                -webkit-transform: scaleX(1.32);
+                transform: scaleX(1.32);
+                -webkit-filter: blur(0.5px);
+                filter: blur(0.5px);
+            }
+        }
+
+        @keyframes scale {
+            60% {
+                -webkit-transform: scaleX(1.32);
+                transform: scaleX(1.32);
+                -webkit-filter: blur(0.5px);
+                filter: blur(0.5px);
+            }
+        }
+
+        @-webkit-keyframes blink {
+
+            0%,
+            5%,
+            15%,
+            100% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+            }
+
+            10% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4);
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            5%,
+            15%,
+            100% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+            }
+
+            10% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4);
+            }
+        }
+
+        @-webkit-keyframes double-left {
+            60% {
+                -webkit-filter: drop-shadow(5px 0 1px var(--active-pale)) drop-shadow(-4px 0 1px var(--active-pale));
+                filter: drop-shadow(5px 0 1px var(--active-pale)) drop-shadow(-4px 0 1px var(--active-pale));
+            }
+        }
+
+        @keyframes double-left {
+            60% {
+                -webkit-filter: drop-shadow(5px 0 1px var(--active-pale)) drop-shadow(-4px 0 1px var(--active-pale));
+                filter: drop-shadow(5px 0 1px var(--active-pale)) drop-shadow(-4px 0 1px var(--active-pale));
+            }
+        }
+
+        @-webkit-keyframes right {
+
+            0%,
+            100% {
+                -webkit-transform-origin: 17% 100%;
+                transform-origin: 17% 100%;
+            }
+
+            50% {
+                -webkit-transform: rotate(-12deg) skewX(12deg);
+                transform: rotate(-12deg) skewX(12deg);
+            }
+        }
+
+        @keyframes right {
+
+            0%,
+            100% {
+                -webkit-transform-origin: 17% 100%;
+                transform-origin: 17% 100%;
+            }
+
+            50% {
+                -webkit-transform: rotate(-12deg) skewX(12deg);
+                transform: rotate(-12deg) skewX(12deg);
+            }
+        }
+
+        @-webkit-keyframes left {
+
+            0%,
+            100% {
+                -webkit-transform-origin: 83% 100%;
+                transform-origin: 83% 100%;
+            }
+
+            50% {
+                -webkit-transform: rotate(12deg) skewX(-12deg);
+                transform: rotate(12deg) skewX(-12deg);
+            }
+        }
+
+        @keyframes left {
+
+            0%,
+            100% {
+                -webkit-transform-origin: 83% 100%;
+                transform-origin: 83% 100%;
+            }
+
+            50% {
+                -webkit-transform: rotate(12deg) skewX(-12deg);
+                transform: rotate(12deg) skewX(-12deg);
+            }
+        }
+
+        @-webkit-keyframes right-end {
+
+            0%,
+            100% {
+                -webkit-transform-origin: 17% 100%;
+                transform-origin: 17% 100%;
+            }
+
+            40% {
+                -webkit-transform: rotate(-6deg) skewX(4deg) scaleX(0.92);
+                transform: rotate(-6deg) skewX(4deg) scaleX(0.92);
+            }
+
+            70% {
+                -webkit-transform: rotate(1deg) skewX(-8deg) scaleX(1.04);
+                transform: rotate(1deg) skewX(-8deg) scaleX(1.04);
+            }
+        }
+
+        @keyframes right-end {
+
+            0%,
+            100% {
+                -webkit-transform-origin: 17% 100%;
+                transform-origin: 17% 100%;
+            }
+
+            40% {
+                -webkit-transform: rotate(-6deg) skewX(4deg) scaleX(0.92);
+                transform: rotate(-6deg) skewX(4deg) scaleX(0.92);
+            }
+
+            70% {
+                -webkit-transform: rotate(1deg) skewX(-8deg) scaleX(1.04);
+                transform: rotate(1deg) skewX(-8deg) scaleX(1.04);
+            }
+        }
+
+        @-webkit-keyframes left-end {
+
+            0%,
+            100% {
+                -webkit-transform-origin: 83% 100%;
+                transform-origin: 83% 100%;
+            }
+
+            40% {
+                -webkit-transform: rotate(6deg) skewX(-4deg) scaleX(0.92);
+                transform: rotate(6deg) skewX(-4deg) scaleX(0.92);
+            }
+
+            70% {
+                -webkit-transform: rotate(-1deg) skewX(8deg) scaleX(1.04);
+                transform: rotate(-1deg) skewX(8deg) scaleX(1.04);
+            }
+        }
+
+        @keyframes left-end {
+
+            0%,
+            100% {
+                -webkit-transform-origin: 83% 100%;
+                transform-origin: 83% 100%;
+            }
+
+            40% {
+                -webkit-transform: rotate(6deg) skewX(-4deg) scaleX(0.92);
+                transform: rotate(6deg) skewX(-4deg) scaleX(0.92);
+            }
+
+            70% {
+                -webkit-transform: rotate(-1deg) skewX(8deg) scaleX(1.04);
+                transform: rotate(-1deg) skewX(8deg) scaleX(1.04);
+            }
+        }
+
+        @-webkit-keyframes move-to-right {
+            40% {
+                -webkit-transform: translateX(3px) rotate(var(--r));
+                transform: translateX(3px) rotate(var(--r));
+            }
+        }
+
+        @keyframes move-to-right {
+            40% {
+                -webkit-transform: translateX(3px) rotate(var(--r));
+                transform: translateX(3px) rotate(var(--r));
+            }
+        }
+
+        @-webkit-keyframes move-to-left {
+            40% {
+                -webkit-transform: translateX(-3px) rotate(var(--r));
+                transform: translateX(-3px) rotate(var(--r));
+            }
+        }
+
+        @keyframes move-to-left {
+            40% {
+                -webkit-transform: translateX(-3px) rotate(var(--r));
+                transform: translateX(-3px) rotate(var(--r));
+            }
+        }
+    </style>
+
+    <!-- Cart css -->
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(248, 248, 248);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: black;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .bntcart {
+            position: relative;
+            margin-top: 2px;
+            font-size: 20px;
+            width: 150px;
+            height: 45px;
+        }
+
+        .bntcart:hover {
+            color: white;
+            background-color: goldenrod;
+            transition: 0.2s;
+            box-shadow: 0 0 10px gold;
+            border: 3px solid gold;
+            border-radius: 50px;
+        }
+    </style>
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="header">
+
+        <a class="navbar-brand" style="color: white;" href="../../../index.html">
+            <img src="../../img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt="" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="../../../index.html">HOME</a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="../../pages/Gioithieu.html">INTRODUCE</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BRANDs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="../BO Concept/BO Concept.html">BO Concept</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../SB/SB.html">SB Furniture</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../ASHLEY/ASHLEY.html">ASHLEY</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../AARON/AARON.html">AARON</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../DUNELM/DUNELM.html">DUNELM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../IKEA/IKEA.html">IKEA</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown mx-4">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REFER
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="../LIVING.html">DESIGN LIVINGROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../CLASSROOM.html">DESIGNCLASSROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../WORK.html">DESIGN WORKROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../KITCHEN.html">DESIGN KITCHEN</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="../../pages/Lien_he.html">CONTACT US</a>
+                </li>
+
+            </ul>
+            <!-- Item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+
+                    <!-- Cart -->
+                    <div id="mySidenav" class="sidenav text-center">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                        <ul class="list-group">
+
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../../img/IKEA/1.jfif" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Parlor Chair</h5>
+                                        <div style="font-size: 16px;">MSP: A572521</div>
+                                        <h5 style="color: red;">4.500.000VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../../img/IKEA/2.jfif" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Sebastian Chair</h5>
+                                        <div style="font-size: 16px;">MSP: A368445</div>
+                                        <h5 style="color: red;">12.000.000VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../../img/IKEA/3.jfif" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Viv Swivel Chair</h5>
+                                        <div style="font-size: 16px;">MSP: A156731</div>
+                                        <h5 style="color: red;">13.000.000 VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <div style="font-size: 18px;">Tổng tiền : <h5 style="color: red;">29.000.000 VND</h5>
+                        </div>
+                        <a href="../pages/login.html"><button type="button" class="bntcart">Tính
+                                Tiền</button></a>
+
+
+                    </div>
+
+
+                    <a style="cursor:pointer; " onclick="openNav()"><i class="fa fa-shopping-cart" aria-hidden="true"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i>
+                    </a>
+
+                </li>
+                <li class="nav-item mx-4">
+                    <a href="../pages/login.html"><i class="fa fa-user"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div style="height: 130px;"></div>
+
+    <!-- Thong tin san pham -->
+    <div class="container my-3">
+        <div class="row">
+
+            <!-- Hình -->
+            <div class="col-md-6 mb-3">
+                <div class="img-magnifier-container">
+                    <img id="myimage" src="../../img/Dunelm/3.jpg" height="400">
+                </div>
+            </div>
+
+            <!-- Thông tin -->
+            <div class="col-md-6 text-left ">
+                <div style="font-size: 65px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    Three Chair</div>
+                <input type="text" style="border: 0; font-size: 2.5em;width: 180px; color: red; font-weight: 500;"
+                    id="Gia" readonly value="5000000"><span
+                    style="font-size: 20px; color: red;font-weight: 600;">VND&nbsp;</span>
+
+
+                <div style="font-size: 18px;" class="mt-2">Brand: &nbsp; <span
+                        style="font-size: 35px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">SB
+                        Furniture</span>
+                </div>
+                <div style="font-size: 18px;"><i> MSP: A19042</i></div>
+                <div class="mt-3 mb-4">
+                    <span style="font-size: 20px;font-weight: 500;">Amount:&nbsp;</span>
+                    <button id="giam" style="width: 26px;">-</button>
+                    <input type="text" style="height: 40px;width: 40px; text-align: center;" readonly value="1"
+                        id="soluong">
+                    <button id="tang">+</button>
+                </div>
+
+                <a href="../pages/login.html"><button type="button"
+                        style="text-align:center;background-color: rgb(218, 40, 48);color: white; height: 45px;width: 230px; font-size: 20px;">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        Buy Now
+                    </button></a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Mô tả + Đánh giá -->
+    <div class="container">
+        <div class="tab">
+            <button class="tablinks active" onclick="openCity(event, 'descrip')">DESCRIPTION</button>
+            <button class="tablinks" onclick="openCity(event, 'comment')">REVIEWS AND COMMENTS</button>
+        </div>
+
+        <!-- Mô tả -->
+        <div id="descrip" class="tabcontent1">
+            • This contract-grade item is manufactured to meet the demands of commercial use in addition to residential.
+            <br>
+            • Kiln-dried solid pine and engineered hardwood frame with reinforced joinery.
+            <br>
+            • Solid ash wood legs in a Dark Walnut finish.
+            <br>
+            • Cushioning has fiber-wrapped, high-resiliency polyurethane foam cores.
+            <br>
+            • Webbed cushion support.
+            <br>
+            • Coordinates with West Elm's Ryder Ottoman (sold separately).
+            <br>
+            • Semi-attached seat cushion.
+            <br>
+            • Imported
+            <br>
+            <b>Detail :&nbsp;&nbsp;</b><a href="../../pages/dowload-to-more.pdf"> Download to more</a>
+
+            <!-- Sản phẩm thường được xem cùng -->
+            <h3 style="color: rgb(70, 69, 69);" class="mt-3">PRODUCTS COMPARE</h3>
+            <div class="row mt-3" data-aos="fade-zoom-in" data-aos-duration="2000">
+
+                <div class="col-md-3 khung">
+                    <a href="../SB/SB-1.html" class="img-hover-zoom--colorize"><img src="../../img/SB/1.jpg" height="250px"
+                            width="250px" alt=""></a>
+                    <div class="textsosanh">Klogrey Chair - SB Furniture<br>600.000 VND </div>
+                </div>
+
+                <div class="col-md-3 khung">
+                    <a href="../SB/SB-2.html" class="img-hover-zoom--colorize"><img src="../../img/SB/2.jpg" height="250px"
+                            width="250px" alt=""></a>
+                    <div class="textsosanh">Jarreau Chair - SB Furniture<br>700.000 VND </div>
+                </div>
+
+                <div class="col-md-3 khung">
+                    <a href="../SB/SB-3.html" class="img-hover-zoom--colorize"><img src="../../img/SB/3.jpg" height="250px"
+                            width="250px" alt=""></a>
+                    <div class="textsosanh">EigNesso Accent ht Chair - SB Furniture<br>800.000 VND </div>
+                </div>
+
+                <div class="col-md-3 khung">
+                    <a href="../SB/SB-4.html" class="img-hover-zoom--colorize"><img src="../../img/SB/4.jpg" height="250px"
+                            width="250px" alt=""></a>
+                    <div class="textsosanh">Ekko Chair - SB Furniture<br>900.000 VND </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Đánh giá + Bình luận -->
+        <div id="comment" class="tabcontent">
+
+            <!-- Đánh giá -->
+            <div class="row mb-4">
+
+                <div class="col-md-3 text-center">
+                    <div style="font-size: 80px;">0</div>
+                    <div style="font-size: 30px;margin-top: -15px;">
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <div style="color: grey;">
+                        Surf Reviews (0)
+                    </div>
+                </div>
+
+                <div class="col-md-5" style="line-height: 10px;margin-top: 23px; font-size: 20px;">
+                    <p>
+                        <span>5 (0)&nbsp;</span>
+                        <span><i style="color: gold;" class="fa fa-star" aria-hidden="true"></i>&nbsp;</span>
+                        <span class="range"></span>
+                    </p>
+                    <p>
+                        <span>4 (0)&nbsp;</span>
+                        <span><i style="color: gold;" class="fa fa-star" aria-hidden="true"></i>&nbsp;</span>
+                        <span class="range"></span>
+                    </p>
+                    <p>
+                        <span>3 (0)&nbsp;</span>
+                        <span><i style="color: gold;" class="fa fa-star" aria-hidden="true"></i>&nbsp;</span>
+                        <span class="range"></span>
+                    </p>
+                    <p>
+                        <span>2 (0)&nbsp;</span>
+                        <span><i style="color: gold;" class="fa fa-star" aria-hidden="true"></i>&nbsp;</span>
+                        <span class="range"></span>
+                    </p>
+                    <p>
+                        <span>1 (0)&nbsp;</span>
+                        <span><i style="color: gold;" class="fa fa-star" aria-hidden="true"></i>&nbsp; </span>
+                        <span class="range"></span>
+                    </p>
+
+
+
+                </div>
+
+            </div>
+
+            <h3 style="color: rgb(70, 69, 69);">
+                Write your reviews, comment on this product</h3>
+
+            <!-- Range star ( cấm đụng vào - hàng nguy hiểm) -->
+            <div class="row mt-4">
+
+                <div class="col-md-12">
+
+
+                    <nav class="rating">
+                        <ul>
+                            <li class="current">
+                                <svg>
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg>
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg>
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                            </li>
+                            <li><span></span>
+                                <svg>
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                            </li>
+                            <li><span></span>
+                                <svg>
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                            </li>
+                            <span style="font-size: 11px;color: rgb(66, 65, 65);margin-top: 15px;">Choose your rating
+                                (*)</span>
+                        </ul>
+                        <div><span>
+                                <svg>
+                                    <use xlink:href="#star"></use>
+                                </svg></span></div>
+                    </nav>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 34" id="star">
+                            <path fill="currentColor"
+                                d="M19.6859343,0.861782958 L24.8136328,8.05088572 C25.0669318,8.40601432 25.4299179,8.6717536 25.8489524,8.80883508 L34.592052,11.6690221 C35.6704701,12.021812 36.2532905,13.1657829 35.8938178,14.2241526 C35.8056709,14.4836775 35.6647294,14.7229267 35.4795411,14.9273903 L29.901129,21.0864353 C29.5299163,21.4962859 29.3444371,22.0366367 29.3872912,22.5833831 L30.1116131,31.8245163 C30.1987981,32.9368499 29.3506698,33.9079379 28.2172657,33.993502 C27.9437428,34.0141511 27.6687736,33.9809301 27.4085205,33.8957918 L18.6506147,31.0307612 C18.2281197,30.8925477 17.7713439,30.8925477 17.3488489,31.0307612 L8.59094317,33.8957918 C7.51252508,34.2485817 6.34688429,33.6765963 5.98741159,32.6182265 C5.90066055,32.3628116 5.86681029,32.0929542 5.88785051,31.8245163 L6.61217242,22.5833831 C6.65502653,22.0366367 6.46954737,21.4962859 6.09833466,21.0864353 L0.519922484,14.9273903 C-0.235294755,14.0935658 -0.158766688,12.8167745 0.690852706,12.0755971 C0.899189467,11.8938516 1.14297067,11.7555303 1.40741159,11.6690221 L10.1505113,8.80883508 C10.5695458,8.6717536 10.9325319,8.40601432 11.1858308,8.05088572 L16.3135293,0.861782958 C16.9654141,-0.0521682813 18.2488096,-0.274439442 19.1800736,0.365326425 C19.3769294,0.500563797 19.5481352,0.668586713 19.6859343,0.861782958 Z">
+                            </path>
+                        </symbol>
+                        <path class="shadow"
+                            d="M18.7022469,29.7633426 L29.1611722,33.6861584 C28.8859085,33.8576358 28.5650147,33.9672494 28.2172657,33.993502 C27.9437428,34.0141511 27.6687736,33.9809301 27.4085205,33.8957918 L18.6506147,31.0307612 C18.2281197,30.8925477 17.7713439,30.8925477 17.3488489,31.0307612 L8.59094317,33.8957918 C7.98083887,34.0953792 7.34281791,33.9989813 6.83864817,33.6859784 L17.2977531,29.7633426 C17.7505234,29.5935537 18.2494766,29.5935537 18.7022469,29.7633426 Z">
+                        </path>
+                    </svg><a class="dribbble" href="https://dribbble.com/shots/7170398-Stars-rating-animation"
+                        target="_blank"><img
+                            src="https://dribbble.com/assets/logo-small-2x-9fe74d2ad7b25fba0f50168523c15fda4c35534f9ea0b1011179275383035439.png" /></a>
+
+                </div>
+
+            </div>
+
+            <!-- Bình luận -->
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" type="text" required placeholder="Your Name*">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" required placeholder="Your Email*">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="" id="" class="form-control" rows="3"
+                                placeholder="Your Comment*"></textarea>
+                        </div>
+                        <button type="submit" style="width:100px" class="btn btn-primary">Send</button>
+                        <button type="reset" style="width:100px" class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container" style="padding-top: 30px;">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+                    <div>
+                        <h3>Brands</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="../../pages/IKEA/IKEA.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+                            <a href="../../pages/AARON/AARON.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+                            <a href="../../pages/ASHLEY/ASHLEY.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+                            <a href="../../pages/DUNELM/DUNELM.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+                            <a href="../../pages/BO Concept/BO Concept.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+                            <a href="../../pages/SB/SB.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3 style="margin-left: -20px;">Refer</h3>
+                        <ul style="line-height: 40px; list-style: none; margin-left: -60px; letter-spacing: 1px;">
+                            <a href="../KITCHEN.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+                            <a href="../LIVING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+                            <a href="../WORK.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+                            <a href="../CLASSROOM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>About</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="../Gioithieu.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+                            <a href="../Lien_he.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a> <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/it.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a></div>
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liên kết Jquery -->
+    <script src="../../../vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="../../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Liên kết AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Sticky -->
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "14px";
+                document.getElementById("header").style.background = "gray";
+                document.getElementById("header").style.height = "65px";
+                document.getElementById("header").style.padding = "10px";
+                document.getElementById("logo").style.height = "50px";
+                document.getElementById("logo").style.width = "100px";
+
+            } else {
+                document.getElementById("header").style.fontSize = "17px";
+                document.getElementById("header").style.background = "";
+                document.getElementById("header").style.padding = "45px";
+                document.getElementById("logo").style.width = "140px";
+                document.getElementById("logo").style.height = "85px";
+            }
+        }
+    </script>
+
+    <!-- Glass img jq -->
+    <script>
+        /* Initiate Magnify Function
+        with the id of the image, and the strength of the magnifier glass:*/
+        magnify("myimage", 3);
+    </script>
+
+    <!-- Mô tả + Bình luận -->
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            tabcontent1 = document.getElementsByClassName("tabcontent1");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            for (i = 0; i < tabcontent1.length; i++) {
+                tabcontent1[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+    <!-- Số lượng + giá tiền -->
+    <script>
+        $(document).ready(function () {
+            var SoLuong = $('#soluong').val();
+            SoLuong = parseInt(SoLuong);
+            var Giabandau = $('#Gia').val();
+            Giabandau = parseInt(Giabandau);
+            var tien = Giabandau;
+
+            $('#tang').click(function () {
+                SoLuong += 1;
+                tien += Giabandau;
+                $('#Gia').val(tien);
+                $('#soluong').val(SoLuong);
+            });
+            $('#giam').click(function () {
+                if (SoLuong > 1) {
+                    SoLuong -= 1;
+                    tien -= Giabandau;
+                    $('#Gia').val(tien);
+                    $('#soluong').val(SoLuong);
+                }
+            });
+        });
+    </script>
+
+    <!-- Range star -->
+    <script>
+        $('.rating ul li').on('click', function () {
+
+            let li = $(this),
+                ul = li.parent(),
+                rating = ul.parent(),
+                last = ul.find('.current');
+
+            if (!rating.hasClass('animate-left') && !rating.hasClass('animate-right')) {
+
+                last.removeClass('current');
+
+                ul.children('li').each(function () {
+                    let current = $(this);
+                    current.toggleClass('active', li.index() > current.index());
+                });
+
+                rating.addClass(li.index() > last.index() ? 'animate-right' : 'animate-left');
+                rating.css({
+                    '--x': li.position().left + 'px'
+                });
+                li.addClass('move-to');
+                last.addClass('move-from');
+
+                setTimeout(() => {
+                    li.addClass('current');
+                    li.removeClass('move-to');
+                    last.removeClass('move-from');
+                    rating.removeClass('animate-left animate-right');
+                }, 800);
+
+            }
+
+        })
+
+    </script>
+
+    <!-- Cart -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <!-- Số lượng as -->
+    <script>
+        $(document).ready(function () {
+            var SoLuong = $('#soluongas').val();
+            SoLuong = parseInt(SoLuong);
+
+            $('#tangas').click(function () {
+                SoLuong += 1;
+                $('#soluongas').val(SoLuong);
+            });
+            $('#giamas').click(function () {
+                if (SoLuong > 1) {
+                    SoLuong -= 1;
+                    $('#soluongas').val(SoLuong);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

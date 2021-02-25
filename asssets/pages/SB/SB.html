@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand SB Furniture</title>
+    <link rel="icon" type="image/x-icon" href="../../img/icon.png" type="text/css">
+
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="../../../vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS Font-Awesome -->
+    <link href="../../../vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Liên kết CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Header css -->
+    <style>
+        @media (max-width: 576px) {
+
+            #logo {
+                width: 50px;
+                height: 55px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 400px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 5%;
+                padding-top: 35%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+        @media (min-width: 576px) {
+            #logo {
+                width: 70px;
+                height: 65px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 450px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 20%;
+                padding-top: 25%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 50px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            #logo {
+                width: 90px;
+                height: 85px;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .h1 {
+                position: absolute;
+                text-align: center;
+                padding-left: 25%;
+                padding-top: 25%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 65px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 20%;
+                padding-top: 20%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 60px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+
+            #logo {
+                width: 140px;
+                height: 85px;
+            }
+
+            #header {
+                padding-right: 44px;
+                padding-left: 47px;
+                padding-top: 5px;
+                font-size: 17px;
+                position: fixed;
+                top: 0;
+                transition: 0.6s;
+            }
+
+            .img-fluid img {
+                width: 100%;
+                height: 550px;
+            }
+
+            .h1 {
+                position: absolute;
+                padding-left: 25%;
+                padding-top: 15%;
+                color: rgba(255, 208, 0, 0.952);
+                font-size: 80px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+        }
+    </style>
+
+    <!-- Nội dung bán hàng css -->
+    <style>
+        .imgrp {
+            width: 80px;
+            height: 80px;
+        }
+
+        @media only screen and (max-width: 760px) {
+            .imgrp {
+                margin-left: 25%;
+                height: 250px;
+                width: 250px;
+            }
+        }
+        .khung {
+            height: 250px;
+            width: 250px;
+            overflow: hidden;
+        }
+
+        /* Colorize-zoom Container */
+        .img-hover-zoom--colorize img {
+            transition: transform .5s, filter 1.5s ease-in-out;
+
+        }
+
+        /* The Transformation */
+        .img-hover-zoom--colorize:hover img {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+
+        .tenthuonghieu {
+            margin-left: 10px;
+            padding-left: 15px;
+            font-size: 20x;
+            letter-spacing: 7px;
+            font-weight: 500;
+            color: grey;
+            background-color: rgb(68, 67, 67);
+        }
+
+        .tentitle {
+            color: rgb(66, 65, 65);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .tenthuonghieuhv {
+            background-color: rgb(226, 223, 223);
+            color: grey;
+        }
+
+        .tenthuonghieuhv1 {
+            background-color: rgb(156, 155, 155);
+            color: white;
+        }
+
+        .tenthuonghieuhv:hover {
+            color: rgb(238, 174, 13);
+        }
+
+        .duongngang {
+            position: absolute;
+            width: 41%;
+            height: 1px;
+            border-bottom: 2px solid black;
+            top: 45px;
+            margin-left: 0px;
+        }
+    </style>
+
+    <!-- Cart css -->
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(248, 248, 248);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: black;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .bntcart {
+            position: relative;
+            margin-top: 2px;
+            font-size: 20px;
+            width: 150px;
+            height: 45px;
+        }
+
+        .bntcart:hover {
+            color: white;
+            background-color: goldenrod;
+            transition: 0.2s;
+            box-shadow: 0 0 10px gold;
+            border: 3px solid gold;
+            border-radius: 50px;
+        }
+    </style>
+
+    <!-- Footer css -->
+    <style>
+        .fhv:hover {
+            color: goldenrod;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
+        <a class="navbar-brand" style="color: white;" href="../../../index.html">
+            <img src="../../img/logo.png" id="logo" class="d-inline-block align-top NAVBAR-color" alt="" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- nội dung thanh navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="../../../index.html">HOME</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" style="color: white;" href="../../pages/Gioithieu.html">INTRODUCE</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        BRANDs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="../IKEA/IKEA.html">IKAE</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../BO Concept/BO Concept.html">BO Concept</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../ASHLEY/ASHLEY.html">ASHLEY</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../AARON/AARON.html">AARON</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../DUNELM/DUNELM.html">DUNELM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../SB/SB.html">SB Furniture</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown mx-4">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" style="color: white;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REFER
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        <a class="dropdown-item" href="../LIVING.html">DESIGN LIVINGROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../CLASSROOM.html">DESIGNCLASSROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../WORK.html">DESIGN WORKROOM</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../KITCHEN.html">DESIGN KITCHEN</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="../../pages/Lien_he.html">CONTACT US</a>
+                </li>
+            </ul>
+            <!-- Item -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <!-- Cart -->
+                    <div id="mySidenav" class="sidenav text-center">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../../img/IKEA/1.jfif" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Sofa Happyer</h5>
+                                        <div style="font-size: 16px;">MSP: A19089</div>
+                                        <h5 style="color: red;">1.000.000 VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../../img/IKEA/2.jfif" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Sofa LOO</h5>
+                                        <div style="font-size: 16px;">MSP: A19888</div>
+                                        <h5 style="color: red;">2.000.000 VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="../../img/IKEA/3.jfif" width="110px" alt="">
+                                        <button id="giamas" style="width: 26px;">-</button>
+                                        <input type="text" style="height: 30px;width: 30px; text-align: center;"
+                                            readonly value="1" id="soluongas">
+                                        <button id="tangas">+</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3">Klorey Chair</h5>
+                                        <div style="font-size: 16px;">MSP: A19079</div>
+                                        <h5 style="color: red;">3.000.000 VND</h5>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div style="font-size: 18px;">Tổng tiền : <h5 style="color: red;">6.000.000 VND</h5>
+                        </div>
+                        <a href="../../pages/login.html"><button type="button" class="bntcart">Tính
+                                Tiền</button></a>
+
+                    </div>
+
+                    <a style="cursor:pointer; " onclick="openNav()"><i class="fa fa-shopping-cart" aria-hidden="true"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i>
+                    </a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a href="../../pages/login.html"><i class="fa fa-user"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="../COMPARE.html"><i  class="fa fa-list" aria-hidden="true"
+                            style="font-size: 23px; color: rgb(226, 223, 223);"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Head -->
+    <h1 data-aos="zoom-in" data-aos-duration="1500" class="h1">
+        BRAND SB Furniture</h1>
+    <div>
+        <div class="img-fluid">
+            <img src="../../img/SB/background.jpg" alt="">
+        </div>
+    </div>
+
+
+    <!-- Nội dung sản phẩm  -->
+    <div class="container-fluid  mt-4">
+        <div class="row">
+
+            <!-- Danh mục -->
+            <div class="col-md-3" style="position: relative;">
+                <h3 class="tentitle">BRAND CATEGORY</h3>
+                <span class="duongngang"></span>
+                <!-- Danh sách thương hiệu -->
+                <ul class="list-group list-group-flush tenthuonghieu my-5">
+                    <li class="list-group-item tenthuonghieuhv1">SB Furniture</li>
+                    <a href="../BO Concept/BO Concept.html">
+                        <li class="list-group-item tenthuonghieuhv">BO Concept</li>
+                    </a>
+                    <a href="../IKEA/IKEA.html">
+                        <li class="list-group-item tenthuonghieuhv">IKEA</li>
+                    </a>
+                    <a href="../ASHLEY/ASHLEY.html">
+                        <li class="list-group-item tenthuonghieuhv">ASHLEY</li>
+                    </a>
+                    <a href="../AARON/AARON.html">
+                        <li class="list-group-item tenthuonghieuhv">AARON</li>
+                    </a>
+                    <a href="../DUNELM/DUNELM.html">
+                        <li class="list-group-item tenthuonghieuhv">DUNELM</li>
+                    </a>
+                </ul>
+
+                <h3 class="tentitle">SELLING PRODUCTS</h3>
+                <span class="duongngang" style="margin-top: 421px;"></span>
+                <!-- Sản phẩm bán chạy -->
+                <div>
+
+                    <div class="row mt-5">
+
+                        <!-- hình -->
+                        <div class="col-md-4">
+                            <div style="overflow: hidden; ">
+                                <a href="../SB/SB-1.html" class="img-hover-zoom--colorize">
+                                    <img class="imgrp" src="../../img/SB/1.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- nội dung -->
+                        <div class="col-md-8 text-center">
+                            <div style="font-size: 20px; font-weight: 500;">Klorey Chair</div>
+                            <div>MSP: A19042</div>
+                            <div style="color: red;font-size: 20px; ">1.000.000 VND</div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row my-3">
+
+                        <!-- hình -->
+                        <div class="col-md-4">
+                            <div style="overflow: hidden; ">
+                                <a href="../SB/SB-2.html" class="img-hover-zoom--colorize">
+                                    <img class="imgrp" src="../../img/SB/2.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- nội dung -->
+                        <div class="col-md-8 text-center">
+                            <div style="font-size: 20px; font-weight: 500;">Jarreau Chair</div>
+                            <div>MSP: A19042</div>
+                            <div style="color: red;font-size: 20px; ">1.000.000 VND</div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <!-- hình -->
+                        <div class="col-md-4">
+                            <div style="overflow: hidden; ">
+                                <a href="../SB/SB-3.html" class="img-hover-zoom--colorize">
+                                    <img class="imgrp" src="../../img/SB/3.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- nội dung -->
+                        <div class="col-md-8 text-center">
+                            <div style="font-size: 20px; font-weight: 500;">Nesso Accent Chair</div>
+                            <div>MSP: A19042</div>
+                            <div style="color: red;font-size: 20px; ">1.000.000 VND</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container d-lg-none d-xl-none mt-5" style="position: relative;">
+                <h3 class="tentitle">PRODUCTS</h3>
+                <span class="duongngang" ></span>
+            </div>
+
+            <!-- Sản phẩm-->
+            <div class="col-md-9 mt-5">
+
+                <div class="row ml-5">
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-1.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Klorey Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">100.000VND</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-2.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Jarreau Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">200.000VND</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-3.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Nesso Accent Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">300.000VND</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row ml-5 my-5">
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-4.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/4.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Ekko Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">100.000VND</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-5.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/5.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Niddle Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">200.000VND</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-6.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/6.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Volibear Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">300.000VND</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row ml-5 mb-4">
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-7.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/7.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Chaien Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">100.000VND</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-8.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/8.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Xeko Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">200.000VND</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="khung">
+                            <a href="../SB/SB-9.html" class="img-hover-zoom--colorize">
+                                <img width="250px" height="250px" src="../../img/SB/9.jpg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <span style="font-size: 23px;font-weight: 500;">Nobita Chair</span><br>MSP:A19042
+                            &nbsp; <span style="color: red; font-size: 18px;">300.000VND</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Sản phẩm liên quan -->
+    <div class="container my-5" style="position: relative;" data-aos="fade-zoom-in" data-aos-duration="2000">
+        <h3 class="tentitle">RELATED PRODUCTS</h3>
+        <span class="duongngang" style="width:15%"></span>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="khung">
+                    <a href="../DUNELM/D-4.html" class="img-hover-zoom--colorize">
+                        <img width="250px" height="250px" src="../../img/Dunelm/4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="khung">
+                    <a href="../DUNELM/D-5.html" class="img-hover-zoom--colorize">
+                        <img width="250px" height="250px" src="../../img/Dunelm/5.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="khung">
+                    <a href="../DUNELM/D-6.html" class="img-hover-zoom--colorize">
+                        <img width="250px" height="250px" src="../../img/Dunelm/6.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="khung">
+                    <a href="../DUNELM/D-7.html" class="img-hover-zoom--colorize">
+                        <img width="240px" height="240px" src="../../img/Dunelm/7.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div style="background-color: rgb(37, 36, 36); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container" style="padding-top: 30px;">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-xs-12 col-md-3">
+                    <div>
+                        <h3>Brands</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="../../pages/IKEA/IKEA.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">IKEA</li>
+                            </a>
+                            <a href="../../pages/AARON/AARON.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">AARON</li>
+                            </a>
+                            <a href="../../pages/ASHLEY/ASHLEY.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">ASHLEY</li>
+                            </a>
+                            <a href="../../pages/DUNELM/DUNELM.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">DUNELM</li>
+                            </a>
+                            <a href="../../pages/BO Concept/BO Concept.html"
+                                style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">BO Concept</li>
+                            </a>
+                            <a href="../../pages/SB/SB.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">SB Furniture</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Refer -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3 >Refer</h3>
+                        <ul style="line-height: 40px; list-style: none; margin-left: -40px; letter-spacing: 1px;">
+                            <a href="../KITCHEN.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Disign dining room</li>
+                            </a>
+                            <a href="../LIVING.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign living room</li>
+                            </a>
+                            <a href="../WORK.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign work room</li>
+                            </a>
+                            <a href="../CLASSROOM.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Disign classroom</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>About</h3>
+                        <ul style="line-height: 35px; list-style: none; margin-left: -40px; letter-spacing: 2px;">
+                            <a href="../Gioithieu.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv mt-3">Introduce</li>
+                            </a>
+                            <a href="../Lien_he.html" style="color: rgb(184, 181, 181); text-decoration: none;">
+                                <li class="fhv">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Follow -->
+                <div class="col-xs-12  col-md-3 ">
+                    <div>
+                        <h3>Follow us</h3>
+                        <div class="list_support mt-3">
+                            <a><img alt="" height="24" src="http://w3ni833.web3nhat.net/data/media/945/images/vb.png"
+                                    width="24"></a>
+                            <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/2019/gf.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/ff.png"
+                                    width="25"></a> <a><img alt="" height="25"
+                                    src="http://w3ni833.web3nhat.net/data/media/945/images/it.png" width="25"></a>
+                            <a><img alt="" height="25" src="http://w3ni833.web3nhat.net/data/media/945/images/yf.png"
+                                    width="25"></a></div>
+                        <a><img alt="" class="mt-4" height="86"
+                                src="http://w3ni833.web3nhat.net/data/media/945/images/1.png" width="202"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liên kết Jquery -->
+    <script src="../../../vendor/jquery.js"></script>
+
+    <!-- Liên kết Bootstrap -->
+    <script src="../../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Liên kết AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Sticky -->
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("header").style.fontSize = "14px";
+                document.getElementById("header").style.background = "gray";
+                document.getElementById("header").style.height = "65px";
+                document.getElementById("header").style.padding = "10px";
+                document.getElementById("logo").style.height = "50px";
+                document.getElementById("logo").style.width = "100px";
+
+            } else {
+                document.getElementById("header").style.fontSize = "17px";
+                document.getElementById("header").style.background = "";
+                document.getElementById("header").style.padding = "45px";
+                document.getElementById("logo").style.width = "140px";
+                document.getElementById("logo").style.height = "85px";
+            }
+        }
+    </script>
+
+    <!-- Cart -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <!-- Số lượng as -->
+    <script>
+        $(document).ready(function () {
+            var SoLuong = $('#soluongas').val();
+            SoLuong = parseInt(SoLuong);
+
+            $('#tangas').click(function () {
+                SoLuong += 1;
+                $('#soluongas').val(SoLuong);
+            });
+            $('#giamas').click(function () {
+                if (SoLuong > 1) {
+                    SoLuong -= 1;
+                    $('#soluongas').val(SoLuong);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
